@@ -1,0 +1,25 @@
+<div class="panel">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="Form">
+                
+                <div class="row" *ngFor="let jr of jour">
+                    <div class="col-md-12">
+                        <label id="example-radio-group-label">{{jr.jr}}</label>
+                        <mat-radio-group
+                          aria-labelledby="example-radio-group-label"
+                          class="example-radio-group"
+                          
+                          formControlName="{{jr.formName}}" (change)="change()">
+                          <mat-radio-button  class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+                            {{season}}
+                          </mat-radio-button>
+                        </mat-radio-group>
+                        <!-- <div>Your favorite season is: {{Form.get('lundi')}}</div> -->
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

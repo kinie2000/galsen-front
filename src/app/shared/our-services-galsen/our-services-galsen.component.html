@@ -1,0 +1,87 @@
+<!-- <div class="section mt-3">
+    <div class="px-3">
+        <div class="theme-container">
+            <h1 class="section-title mb-3">Une envie? Une voiture</h1>
+            <p class="section-desc text-muted">C'est ce que nous faisons et nous le faisons parfaitement.</p>
+            <div class="awards-carousel">
+                <div class="swiper-container h-100" [swiper]="config">
+                    <div class="swiper-wrapper h-100">
+                        <div *ngFor="let award of awards" class="swiper-slide">
+                            <div class="award-item">
+                                <img [attr.data-src]="award.image" class="swiper-lazy">
+                                <div class="swiper-lazy-preloader"></div>
+                            </div>
+                            <p class="desc" style="text-align: center;">{{award.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="section mt-3">
+    <div class="px-3">
+        <div class="">
+            <h1 class="section-title mb-3">Une envie? Une voiture</h1>
+            <p class="section-desc text-muted">C'est ce que nous faisons et nous le faisons parfaitement.</p>
+            <div class="l">
+                <div class="" [swiper]="config">
+                    <div class="swiper-wrapper">
+                        <div *ngFor="let award of awards" class="swiper-slide">
+                            <div class="card-box">
+                                <div class="card-thumbnail">
+                                    <img src="{{award.image}}" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <p class="desc" style="text-align: center; font-weight: 100px;">{{award.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-6 col-lg-4">
+            <div class="card-box">
+                <div class="card-thumbnail">
+                    <img src="../../../assets/images/envie_voitue/weekend.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card-box">
+                <div class="card-thumbnail">
+                    <img src="../../../assets/images/envie_voitue/vac.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card-box">
+                <div class="card-thumbnail">
+                    <img src="../../../assets/images/envie_voitue/colis.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card-box">
+                <div class="card-thumbnail">
+                    <img src="../../../assets/images/envie_voitue/wedding.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card-box">
+                <div class="card-thumbnail">
+                    <img src="../../../assets/images/envie_voitue/bussiness.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

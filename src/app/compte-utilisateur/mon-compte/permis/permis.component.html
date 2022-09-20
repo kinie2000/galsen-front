@@ -1,0 +1,106 @@
+<div fxLayout="row wrap" fxLayoutAlign="end center" ngClass.xs="mb-3">
+</div>
+    <mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <span>Identification du Permis de conduire</span>
+    
+        </ng-template>
+        <div class="o-hidden mt-4">
+
+            <div fxLayout="row wrap" class="flex-wrapper">
+                <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" class="p-3">
+                </div>
+                <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="p-3">
+                    <div class="bordered px-3 py-2">
+                        <div fxLayoutAlign="space-between center">
+                            <mat-icon class="text-muted">perm_identity</mat-icon>
+                        </div>
+                        <h1 class="secondary-font text-center mb-3">Identification</h1>
+                        <div class="divider"></div>
+                        <div class="pt-3">
+                            <p>
+                                Louez en toute sécurité ! En procédant à votre identification vous multipliez par 3 la
+                                confiance des personnes qui consultent votre profil. Cette procédure, simple et rapide,
+                                est obligatoire pour effectuer une réservation utilisant le service OuiCar Connect.
+                                En savoir plus
+                                Ces informations ne sont partagées qu'une fois votre réservation confirmée par un autre
+                                propriétaire Galsen .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" class="p-3">
+                </div>
+            </div>
+            <br /><br />
+            <form [formGroup]="infoFormPermis" (ngSubmit)="onInfoFormPermisSubmit()" autocomplete="off">
+
+                <div fxLayout="row wrap" class="flex-wrapper">
+
+
+                     <!-- 1 -->
+                     <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+                     <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>N° du Permis</mat-label>
+                            <input matInput placeholder="N° du Permis" formControlName="driver_licenses_number" value="{{this.item?.driver_licenses_number}}">
+                            <mat-error *ngIf="infoFormPermis.controls.driver_licenses_number.errors?.required">N° du Permis is
+                                required</mat-error>
+                        </mat-form-field>
+                     </div>
+                     <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+ 
+                     <!-- 2 -->
+                     <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+                         <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Date de délivrance</mat-label>
+                                <input matInput readonly placeholder="Date de délivrance" formControlName="driver_licenses_date"
+                                    [matDatepicker]="datePickerEnd" appMaskDate>
+                                <mat-datepicker-toggle matSuffix [for]="datePickerEnd"></mat-datepicker-toggle>
+                                <mat-datepicker #datePickerEnd></mat-datepicker>
+                                <mat-error *ngIf="infoFormPermis.controls.driver_licenses_date.errors?.required">Date de délivrance
+                                     obligatoire</mat-error>
+                            </mat-form-field>
+                         </div>
+                         <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+                         
+                         <!-- 3 -->
+                         <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+                     <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Pays</mat-label>
+                            <mat-select placeholder="Select driver_licenses_country" formControlName="driver_licenses_country" required>
+                                <mat-option *ngFor="let driver_licenses_country of countries" [value]="driver_licenses_country.code">
+                                    {{driver_licenses_country.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        </div>
+                     <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+ 
+                     <!-- 4 -->
+                     <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+
+                     <div fxFlex="100" fxFlex.gt-sm="25" class="px-3">
+                     <div class="text-center">
+                                 
+                                 <button mat-raised-button color="primary" type="submit" class="w-100 uppercase"><span
+                                    class="px-3 uppercase">mettre à jour</span></button>
+                     </div>
+                            </div>
+                            <div fxFlex="100" fxFlex.gt-sm="25" class="px-3">
+                     <div class="text-center">
+                                 
+                        <button mat-raised-button color="primary" class="w-100 uppercase" onclick = "history.back();"><span
+                           class="px-3 uppercase">Annuler</span></button>
+                     </div>
+                    </div>
+
+                     <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+                </div>
+            </form>
+        </div>
+    </mat-tab>
+</mat-tab-group>

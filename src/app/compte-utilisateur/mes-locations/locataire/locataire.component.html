@@ -1,0 +1,102 @@
+<form [formGroup]="infoForm" (ngSubmit)="onInfoFormSubmit()" autocomplete="off" fxLayout="row wrap">
+
+    <div fxFlex="100" fxFlex.gt-sm="20" class="px-3 mb-3"> </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="60" class="px-3" ngClass.sm="mt-2" ngClass.xs="mt-2">
+
+        <h2 class="secondary-font text-center mb-3">Enregistrer Votre permis de conduire</h2>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Numéro de permis</mat-label>
+            <input matInput placeholder="Numéro de permis" formControlName="NumeroPermis" required>
+            <mat-error *ngIf="infoForm.controls.NumeroPermis.errors?.required">Numéro de permis obligatoire</mat-error>
+            <!-- <mat-error *ngIf="infoForm.controls.name.hasError('minlength')">Name isn't long enough, minimum of 3 characters</mat-error> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Pays</mat-label>
+            <input matInput placeholder="Pays" formControlName="Pays" required>
+            <mat-error *ngIf="infoForm.controls.Pays.errors?.required">Pays obligatoire</mat-error>
+            <!-- <mat-error *ngIf="infoForm.controls.name.hasError('minlength')">Name isn't long enough, minimum of 3 characters</mat-error> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Date d’obtention</mat-label>
+            <input matInput readonly placeholder="Fin" formControlName="DateObtention" [matDatepicker]="datePickerEnd"
+                appMaskDate>
+            <mat-datepicker-toggle matSuffix [for]="datePickerEnd"></mat-datepicker-toggle>
+            <mat-datepicker #datePickerEnd></mat-datepicker>
+            <mat-error *ngIf="infoForm.controls.DateObtention.errors?.required">Date d’obtention est obligatoire
+            </mat-error>
+        </mat-form-field>
+
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="20" class="px-3 mb-3"></div>
+
+    <div fxFlex="100" class="text-center mt-2">
+        <button mat-raised-button color="primary" type="submit" class="uppercase">mettre à jour</button>
+    </div>
+</form>
+<!-- <app-search-car></app-search-car>
+<div class="car_search">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="select()">LIKE</button>
+            <button mat-button>SHARE</button>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+<div class="display-flex align-right mt4">
+    <p class="fz-16 mr1">Les locations sont assurées par</p>
+    <app-logo-insurance></app-logo-insurance>
+</div> -->

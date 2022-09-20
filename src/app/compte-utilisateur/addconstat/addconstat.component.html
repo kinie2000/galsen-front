@@ -1,0 +1,452 @@
+<div fxLayout="row wrap" fxLayoutAlign="end center" ngClass.xs="mb-3">
+
+</div>
+<p class="para">par defaut tous les elements sont neufs,</p><br><p class="paraobl">*le seul champ obligatoire est le vehicule</p>
+<form [formGroup]="infoFormcoordonnees" (ngSubmit)="onInfoFormCoordonneesSubmit()" autocomplete="off">
+
+    <mat-tab-group>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <span>Aspect intérieur</span>
+
+            </ng-template>
+            <div class="o-hidden mt-4">
+
+
+                <div fxLayout="row wrap" class="flex-wrapper">
+
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Tableau de bord</mat-label>
+                            <mat-select placeholder="Select Tableau de bord" formControlName="Tableau_de_bord">
+                                <mat-option *ngFor="let item of TBV" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Tableau de bord</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMTableau_de_bord">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Frein de secours</mat-label>
+                            <mat-select placeholder="Select Frein de secours" formControlName="Frein_de_secours">
+                                <mat-option *ngFor="let item of FSV" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Frein de secours</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMFrein_de_secours">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Jauges de niveau</mat-label>
+                            <mat-select placeholder="Select Jauges de niveau" formControlName="Jauges_de_niveau">
+                                <mat-option *ngFor="let item of JNV" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Jauges de niveau</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMJauges_de_niveau">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Rétroviseurs</mat-label>
+                            <mat-select placeholder="Select Rétroviseurs" formControlName="Retroviseurs">
+                                <mat-option *ngFor="let item of Rtv" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Rétroviseurs</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMRetroviseurs">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Compteur kilométrique</mat-label>
+                            <mat-select placeholder="Select Compteur kilométrique"
+                                formControlName="Compteur_kilométrique">
+                                <mat-option *ngFor="let item of cptK" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Compteur kilométrique</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMCompteur_kilométrique">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Aspect des portières</mat-label>
+                            <mat-select placeholder="Select Aspect des portières"
+                                formControlName="Aspect_des_portieres">
+                                <mat-option *ngFor="let item of AspV" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Aspect des portières</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMAspect_des_portieres">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Fonctionnement des portières</mat-label>
+                            <mat-select placeholder="Select Fonctionnement des portières"
+                                formControlName="Fonctionnement_des_portieres">
+                                <mat-option *ngFor="let item of FpV" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Fonctionnement des portières</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMFonctionnement_des_portieres">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Etat des vitres</mat-label>
+                            <mat-select placeholder="Select Etat des vitres" formControlName="Etat_des_vitres">
+                                <mat-option *ngFor="let item of Etv" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Etat des vitres</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMEtat_des_vitres">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Etat des tapis</mat-label>
+                            <mat-select placeholder="Select Etat des tapis" formControlName="Etat_des_tapis">
+                                <mat-option *ngFor="let item of EtpV" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Etat des tapis</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMEtat_des_tapis">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Ceinture de sécurité</mat-label>
+                            <mat-select placeholder="Select Ceinture de sécurité"
+                                formControlName="Ceinture_de_securite">
+                                <mat-option *ngFor="let item of Csv" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Ceinture de sécurité</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMCeinture_de_securite">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Sièges</mat-label>
+                            <mat-select placeholder="Select Sièges" formControlName="Sieges">
+                                <mat-option *ngFor="let item of Sv" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Sièges</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMSieges">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Etat du plafond intérieur</mat-label>
+                            <mat-select placeholder="Select Etat du plafond intérieur"
+                                formControlName="Etat_du_plafond_intérieur">
+                                <mat-option *ngFor="let item of epiv" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Etat du plafond intérieur</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMEtat_du_plafond_interieur">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Pédales</mat-label>
+                            <mat-select placeholder="Select Pédales" formControlName="Pedales">
+                                <mat-option *ngFor="let item of pdlv" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Pédales</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMPedales">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Etat revêtement du coffre</mat-label>
+                            <mat-select placeholder="Select Etat revêtement du coffre"
+                                formControlName="Etat_revetement_du_coffre">
+                                <mat-option *ngFor="let item of Ercv" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Etat revêtement du coffre</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMEtat_revetement_du_coffre">
+
+
+
+                        </mat-form-field>
+                    </div>
+
+
+
+
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+
+                </div>
+
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+    <mat-tab-group>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <span>Aspect des pneumatiques</span>
+
+            </ng-template>
+            <div class="o-hidden mt-4">
+
+
+                <div fxLayout="row wrap" class="flex-wrapper">
+
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Paire de pneus avant</mat-label>
+                            <mat-select placeholder="Select Paire de pneus Paire_de_pneus_avant"
+                                formControlName="Paire_de_pneus_avant">
+                                <mat-option *ngFor="let item of Sppv" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Paire de pneus avant</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMPaire_de_pneus_avant">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Paire de pneus arrière</mat-label>
+                            <mat-select placeholder="Select Paire de pneus arrière"
+                                formControlName="Paire_de_pneus_arriere">
+                                <mat-option *ngFor="let item of ppav" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Paire de pneus arrière</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMPaire_de_pneus_arriere">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Etat de la roue de secours</mat-label>
+                            <mat-select placeholder="Select Etat de la roue de secours"
+                                formControlName="Etat_de_la_roue_de_secours">
+                                <mat-option *ngFor="let item of Ersv" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Etat de la roue de secours</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMEtat_de_la_roue_de_secours">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Aspect extérieur</mat-label>
+                            <mat-select placeholder="Select Aspect extérieur" formControlName="Aspect_extérieur">
+                                <mat-option *ngFor="let item of AexV" [value]="item.value">
+                                    {{item.viewValue}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Commentaire Aspect extérieur</mat-label>
+                            <input matInput placeholder="Nom" formControlName="CMAspect_extérieur">
+
+
+                        </mat-form-field>
+                    </div>
+
+
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+
+                </div>
+
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+    <mat-tab-group>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <span>Indiquez les bosses et les rayures</span>
+
+            </ng-template>
+            <div class="o-hidden mt-4">
+
+
+                <div fxLayout="row wrap" class="flex-wrapper">
+
+
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Indiquez les bosses et les rayures</mat-label>
+                            <input matInput placeholder="Nom" formControlName="autre_constat">
+
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field>
+                            <mat-label>Vehicule</mat-label>
+                            <mat-select placeholder="choisir un vehicule" formControlName="vehicle_id" required>
+                                <mat-option *ngFor="let item of Car" [value]="item.id">
+                                    {{item.mark_lib}},{{item.mod_lib}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3"></div>
+
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3">
+                        <div class="text-center">
+                            <button mat-raised-button color="primary" type="submit" class="w-100 uppercase"><span
+                                    class="px-3 uppercase">mettre à jour</span></button>
+                        </div>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3">
+                        <div class="text-center">
+                            <button mat-raised-button color="primary" class="w-100 uppercase"
+                                onclick="history.back();"><span class="px-3 uppercase">Annuler</span></button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</form>
+

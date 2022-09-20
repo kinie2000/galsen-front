@@ -1,0 +1,105 @@
+
+<div class="inside-wide with-padding-rwd">
+    <div class="search-form">
+        <div class="first">
+            <div class="ce_addresspicker search-icons display-flex align-stretch">
+                <svg color="#008A83" class="address-picker__IconStyled-sc-v98ub7-0 fwTduS address-svg form-icon"viewBox="0 0 1024 1024"style="display: inline-block; stroke: currentcolor; fill: currentcolor; width: 28px; height: 28px;">
+                    <path
+                        d="M342.697 215.944c-50.117 33.487-89.179 81.083-112.247 136.77-23.067 55.686-29.103 116.965-17.345 176.083s40.782 113.419 83.402 156.043l181.064 181.021c9.143 9.132 21.537 14.263 34.461 14.263s25.318-5.131 34.461-14.263l181.021-181.021h0.004c42.617-42.624 71.643-96.925 83.401-156.043s5.72-120.397-17.346-176.083c-23.069-55.687-62.131-103.284-112.249-136.77s-109.038-51.361-169.315-51.361c-60.273 0-119.197 17.874-169.314 51.361zM779.238 736.556v0.004l-181.051 181.047c-22.857 22.835-53.844 35.661-86.155 35.661s-63.298-12.826-86.155-35.661l-181.092-181.051c-52.849-52.849-88.839-120.185-103.419-193.492s-7.095-149.288 21.508-218.341c28.603-69.052 77.040-128.071 139.186-169.595s135.209-63.687 209.95-63.687c74.741 0 147.807 22.163 209.953 63.687s110.581 100.543 139.184 169.595c28.606 69.052 36.089 145.037 21.508 218.341-14.577 73.307-50.567 140.643-103.417 193.492zM420.582 469.332c0-50.494 40.934-91.429 91.429-91.429s91.429 40.934 91.429 91.429c0 50.494-40.934 91.429-91.429 91.429s-91.429-40.934-91.429-91.429zM512.011 304.762c-90.891 0-164.57 73.679-164.57 164.57s73.679 164.571 164.57 164.571c90.891 0 164.571-73.68 164.571-164.571s-73.68-164.57-164.571-164.57z">
+                    </path>
+                </svg>
+                <i class="ico-global-localisation" tabindex="0" title="Autour de moi"></i>
+                <input ngx-google-places-autocomplete [options]='options' (onAddressChange)="addressChange($event)"
+                    autocomplete="off" class="form-input no-focus with-icon-right" data-testid="google-map-input"
+                    name="search-address" placeholder="Saisissez une adresse,..." type="text" autofocus>
+            </div>
+            <p *ngIf="errorAdress" class="form-error-msg">Veuillez indiquer votre adresse de départ</p>
+        </div>
+        <div class="middle">
+            <div class="column">
+                <div class="datecolumn fls psr selected" data-testid="date-range-selector-start">
+                    <input readonly autocomplete="off" class="form-input no-focus start date"
+                        data-testid="google-map-input" name="search-address" placeholder="Début de location" type="text"
+                        [matDatepicker]="datePickerStart" [min]="minDateStart" appMaskDate
+                        (dateChange)="dateStartChange($event)">
+                    <mat-datepicker-toggle (click)="clickIconCalendar()"
+                        class="address-picker__IconStyled-sc-v98ub7-0 fwTduS address-svg-calendar form-icon"
+                        viewBox="0 0 1024 1024"style="display: inline-block; stroke: currentcolor; fill: currentcolor; width: 28px; height: 28px;"matSuffix [for]="datePickerStart">
+                        <mat-icon matDatepickerToggleIcon>
+                            today
+                        </mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #datePickerStart></mat-datepicker>
+                    <div class="ce-calendar" *ngIf="showChoice">
+                        <div class="ce-calendar-period animated fadeIn">
+                            <div class="inner">
+                                <p class="fz-20 align-center mb1">
+                                    {{currentDateStart | date}}
+                                </p>
+                                <button class="button__UiButton-sc-11mljbe-0 iJffHA" type="button"(click)="checkPeriodStart('Avant 12h')">
+                                    <span>Avant 12h</span>
+                                </button>
+                                <div class="circle">
+                                    ou
+                                </div>
+                                <button class="button__UiButton-sc-11mljbe-0 iJffHA" type="button"(click)="checkPeriodStart('Après 12h')">
+                                    <span>Après 12h</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="dateStart != null" class="datecolumn fls psr end" data-testid="date-range-selector-end">
+                    <input readonly matInput autocomplete="off" class="form-input no-focus start date"
+                        data-testid="google-map-input" name="search-address" placeholder="Fin de location" type="text"
+                        [matDatepicker]="datePickerEnd" [min]="minDateEnd" appMaskDate
+                        (dateChange)="dateEndChange($event)" [(ngModel)]="valueDatePickerEnd">
+                    <mat-datepicker-toggle (click)="clickIconCalendar()"class="address-picker__IconStyled-sc-v98ub7-0 fwTduS address-svg-calendar form-icon"viewBox="0 0 1024 1024"
+                        style="display: inline-block; stroke: currentcolor; fill: currentcolor; width: 28px; height: 28px;"matSuffix [for]="datePickerEnd">
+                        <mat-icon matDatepickerToggleIcon>
+                            event
+                        </mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #datePickerEnd></mat-datepicker>
+                    <div class="ce-calendar" *ngIf="showChoiceEnd">
+                        <div class="ce-calendar-period animated fadeIn">
+                            <div class="inner">
+                                <p class="fz-20 align-center mb1">
+                                    {{currentDateEnd | date}}
+                                </p>
+                                <button class="button__UiButton-sc-11mljbe-0 iJffHA" type="button"(click)="checkPeriodEnd('Avant 12h')">
+                                    <span>Avant 12h</span>
+                                </button>
+                                <div class="circle">
+                                    ou
+                                </div>
+                                <button class="button__UiButton-sc-11mljbe-0 iJffHA" type="button"(click)="checkPeriodEnd('Après 12h')">
+                                    <span>Après 12h</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="dateStart == null" class="datecolumn fls psr end" data-testid="date-range-selector-end">
+                    <input disabled readonly matInput autocomplete="off" class="form-input no-focus start date"
+                        data-testid="google-map-input" name="search-address" placeholder="Fin de location" type="text"
+                        [matDatepicker]="datePickerEnd" appMaskDate>
+                    <mat-datepicker-toggle
+                        class="address-picker__IconStyled-sc-v98ub7-0 fwTduS address-svg-calendar form-icon"
+                        viewBox="0 0 1024 1024"
+                        style="display: inline-block; stroke: currentcolor; fill: currentcolor; width: 28px; height: 28px;"
+                        matSuffix [for]="datePickerEnd">
+                        <mat-icon matDatepickerToggleIcon>
+                            event
+                        </mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #datePickerEnd></mat-datepicker>
+                </div>
+            </div>
+        </div>
+        <div class="last">
+            <button class="btn-primary primarycolor" (click)="search()">Rechercher</button>
+        </div>
+    </div>
+   
+</div>

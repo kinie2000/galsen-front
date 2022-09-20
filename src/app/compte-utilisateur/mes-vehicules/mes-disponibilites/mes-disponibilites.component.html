@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()" autocomplete="off" fxLayout="row wrap">
+
+  <div fxLayout="row wrap" class="flex-wrapper">
+    <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="p-3">
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="60" fxFlex.sm="50" class="p-3">
+      <div class="bordered px-3 py-2">
+        <h1 class="primary-font">Horaires de remise des clés</h1>
+        <p>Indiquez vos disponibilités pour remettre votre véhicule aux locataires, et le récupérer.</p>
+        <div class="divider"></div>
+
+
+        <div class="pt-3" *ngFor="let jour of jours">
+          <h3 class="primary-font">{{jour.days}}</h3> <br />
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group
+            " formControlName="{{jour.id}}" required>
+            <mat-radio-button class="example-radio-button" *ngFor="let days of selectedDispo" [value]="days.id">
+              {{days.dispo}}
+            </mat-radio-button>
+          </mat-radio-group>
+          <mat-error *ngIf="form.controls.required"> disponibility days is required</mat-error>
+
+        </div>
+
+        <div class="text-center">
+          <button mat-raised-button color="primary" type="submit" class="w-100 uppercase"><span
+              class="px-3 uppercase">mettre à jour</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="20" fxFlex.sm="50" class="p-3">
+    </div>
+
+  </div>
+</form>

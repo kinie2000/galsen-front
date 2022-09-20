@@ -1,0 +1,73 @@
+<div class="px-3 py-5">
+    <div class="theme-container">  
+        <mat-card class="p-0 o-hidden">
+            <div fxLayout="row wrap"> 
+                <div fxFlex="100" fxFlex.gt-sm="50" class="p-0" [style.background-image]="bgImage" class="bg-cover"> 
+                </div> 
+                <div fxFlex="100" fxFlex.gt-sm="50" class="py-3" ngClass.gt-sm="px-5" ngClass.sm="px-3" ngClass.xs="px-3">  
+                    <div fxLayout="column" fxLayoutAlign="center center" class="text-center">  
+                        <h1 class="secondary-font">Nous vous Rappelerons</h1>  
+                        <!-- <a mat-button routerLink="/login" color="accent" class="w-100">Already have an account? Sign in!</a>   -->
+                    </div>
+                    <form [formGroup]="registerProForm" (ngSubmit)="onregisterProFormSubmit()">  
+                        <mat-form-field  appearance="outline" class="w-100 mt-2">
+                            <mat-icon matPrefix class="mr-1 text-muted">domain</mat-icon>
+                            <mat-label>Nom de Entreprise</mat-label>
+                            <input matInput placeholder="Nom de Entreprise" formControlName="entreprise_name" required>
+                            <mat-error *ngIf="registerProForm.controls.entreprise_name.errors?.required">Nom de Entreprise obligatoire</mat-error>
+                            <mat-error *ngIf="registerProForm.controls.entreprise_name.hasError('minlength')">Nom de Entreprise doit avoir minimoun 4 carracteres</mat-error>
+                        </mat-form-field>
+                        <mat-form-field  appearance="outline" class="w-100 mt-2">
+                            <mat-icon matPrefix class="mr-1 text-muted">domain</mat-icon>
+                            <mat-label>localisation de l'entreprise</mat-label>
+                            <input matInput placeholder="entreprise_city" formControlName="entreprise_city" required>
+                            <mat-error *ngIf="registerProForm.controls.entreprise_city.errors?.required">localisation de l'entreprise obligatoire</mat-error>
+                            <mat-error *ngIf="registerProForm.controls.entreprise_city.hasError('minlength')">la localisation de l'entreprise doit avoir minimoun 6 carracteres</mat-error>
+                        </mat-form-field>
+                        <mat-form-field  appearance="outline" class="w-100 mt-2">
+                            <mat-icon matPrefix class="mr-1 text-muted">confirmation_number</mat-icon>
+                            <mat-label>Nombre de location par mois</mat-label>
+                            <input matInput placeholder="Nombre de location par mois" formControlName="location_nbr" required>
+                            <mat-error *ngIf="registerProForm.controls.location_nbr.errors?.required">Nombre de location par mois obligatoire</mat-error>
+                            <!-- <mat-error *ngIf="registerProForm.controls.username.hasError('minlength')">Numero de telephone doit avoir minimoun 6 carracteres</mat-error> -->
+                        </mat-form-field>
+                        <mat-form-field  appearance="outline" class="w-100 mt-2">
+                            <mat-icon matPrefix class="mr-1 text-muted">person</mat-icon>
+                            <mat-label>Nom de contact</mat-label>
+                            <input matInput placeholder="Nom de contact" formControlName="user_name" required>
+                            <mat-error *ngIf="registerProForm.controls.user_name.errors?.required">Nom de contact obligatoire</mat-error>
+                            <mat-error *ngIf="registerProForm.controls.user_name.hasError('minlength')">Nom de contact doit avoir minimoun 6 carracteres</mat-error>
+                        </mat-form-field>
+                        <mat-form-field  appearance="outline" class="w-100 mt-2">
+                            <mat-icon matPrefix class="mr-1 text-muted">phone</mat-icon>
+                            <mat-label>N° Telephone</mat-label>
+                            <input matInput placeholder="N° Telephone" formControlName="user_phone" required>
+                            <mat-error *ngIf="registerProForm.controls.user_phone.errors?.required">Numero de telephone obligatoire</mat-error>
+                            <mat-error *ngIf="registerProForm.controls.user_phone.hasError('minlength')">Numero de telephone doit avoir minimoun 6 carracteres</mat-error>
+                        </mat-form-field>
+                        
+                        <mat-form-field  appearance="outline" class="w-100 mt-1">
+                            <mat-icon matPrefix class="mr-1 text-muted">email</mat-icon>
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email" required>
+                            <mat-error *ngIf="registerProForm.controls.email.errors?.required">Email is required</mat-error>
+                            <mat-error *ngIf="registerProForm.controls.email.hasError('invalidEmail')">Invalid email address</mat-error>
+                        </mat-form-field>
+                    
+                     
+                        <mat-slide-toggle formControlName="receiveNewsletter" required  name="isAccept" [(ngModel)]="isAccept" checked class="my-2"><a mat-button routerLink="/terms-conditions"  color="primary" class="mx-2">Accepter les Termes et conditions</a></mat-slide-toggle>                           
+                        <mat-error *ngIf="registerProForm.controls.receiveNewsletter.errors?.required">Accepter les conditions et termes sont obligatoires</mat-error>
+                        <mat-error *ngIf="registerProForm.controls.receiveNewsletter.hasError()">Invalid </mat-error>
+                        <div class="text-center mt-2"> 
+                            <button mat-raised-button color="accent" class="uppercase" type="submit">
+                                Envoyer
+                            </button>
+                        </div> 
+                    </form>
+                    <div class="divider mt-4"></div> 
+         
+                </div> 
+            </div> 
+        </mat-card>
+    </div>
+</div>   

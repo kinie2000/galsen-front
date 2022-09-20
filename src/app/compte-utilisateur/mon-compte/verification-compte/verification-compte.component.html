@@ -1,0 +1,149 @@
+<!-- <p class="text-muted">Bonjour, <b>Emilio Verdines!</b> 
+    <br/>Bienvenue sur votre Tableau de bord.</p> -->
+
+<div fxLayout="row wrap" class="flex-wrapper">
+    <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-3">
+        <div class="bordered px-3 py-2">
+            <div fxLayoutAlign="space-between center">
+                <h1 class="primary-font">Adresse email</h1>
+
+                <mat-icon class="text-muted">{{this.item?.email}}</mat-icon>
+
+            </div>
+            <div class="divider"></div>
+            <div class="pt-3 ">
+                <p class="rufin-class2">Soyez assuré de recevoir tous les messages et notifications.</p>
+                <p class="rufin-class">Vous avez confirmé cette adresse :
+
+                    <br />{{this.item?.email}}
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-3">
+        <div class="bordered px-3 py-2">
+            <div fxLayoutAlign="space-between center">
+                <h1 class="primary-font">Mobile</h1>
+                <mat-icon class="text-muted">mobile_friendly</mat-icon>
+            </div>
+            <div class="divider"></div>
+            <div *ngIf="show; else elseBlock"> 
+                <p class="rufin-class2">Facilitez la communication entre membres OuiCar en indiquant un numéro de mobile valide.</p>
+                <p class="rufin-class">Vous avez confirmé ce numéro de mobile:
+                    <br />{{dataUser}}
+                </p>
+            </div>
+            <!-- <ng-template  #thenBlock>
+            <div class="pt-3 ">
+
+                <p class="rufin-class2">Facilitez la communication entre membres Galsen Auto en indiquant un numéro de mobile valide.</p>
+                <p class="rufin-class">Vous avez confirmé ce numéro de mobile:
+                    <br />{{this.item?.user_phone}}
+
+                </p>
+            </div>
+        </ng-template> -->
+        <ng-template  #elseBlock>
+            <div class="pt-3 ">
+                <p class="rufin-class2">Facilitez la communication entre membres OuiCar en indiquant un numéro de mobile valide.</p>
+                <p class="rufin-class21">Vous n'avez pas confirmer ce numéro de mobile:
+                    <br />{{userDetails?.user_phone}}
+                </p>
+            </div>
+        </ng-template>
+        </div>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-3">
+        <div class="bordered px-3 py-2">
+            <div fxLayoutAlign="space-between center">
+                <h1 class="primary-font">Compte Facebook</h1>
+                <mat-icon class="text-muted">people</mat-icon>
+            </div>
+            <div class="divider"></div>
+            <div class="pt-3 ">
+                <p class="rufin-class2">Les locataires aiment savoir à qui ils 
+                    vont louer et accordent plus d’importance aux profils complets. 
+                    Nous ne publierons rien et ne transmettrons jamais le lien de votre 
+                    compte Facebook sur GalsenAuto</p>
+
+                <p class="rufin-class">Vous avez confirmé votre compte Facebook
+                    <br />{{this.item?.facebook_id}}
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-3">
+        <div class="bordered px-3 py-2">
+            <div fxLayoutAlign="space-between center">
+                <h1 class="primary-font">Identification & permis</h1>
+                <mat-icon class="text-muted">portrait</mat-icon>
+            </div>
+            <div class="divider"></div>
+            <div class="pt-3 ">
+                <p class="rufin-class2">
+                    Multipliez par 3 la confiance des personnes qui consultent votre profil. 
+                    Cette procédure, simple et rapide, est obligatoire pour effectuer 
+                    une réservation Galsen Auto
+                </p>
+
+                <p class="rufin-class">Vous avez confirmé votre permis de conduire
+                </p>
+                <p class="rufin-class">Permis N° : {{this.item?.driver_licenses_number}}</p> 
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-3">
+        <div class="bordered px-3 py-2">
+            <div fxLayoutAlign="space-between center">
+                <h1 class="primary-font">Mes Coordonnées</h1>
+                <mat-icon class="text-muted">home</mat-icon>
+            </div>
+            <div class="divider"></div>
+            <div class="pt-3 ">
+                <p class="rufin-class2">
+
+                    N’oubliez pas de mettre à jour vos coordonnées 
+                </p>
+                <p class="rufin-class">
+                    <br />{{this.item?.user_sex}}
+                    {{this.item?.user_surname}} 
+                    {{this.item?.user_name}},<br />
+                    {{this.item?.user_adress}} ,
+                    {{this.item?.user_code_postal}} , 
+                    {{this.item?.user_city}} ,
+                    {{this.item?.user_country}}
+
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="33.3" fxFlex.sm="50" class="p-3">
+        <div class="bordered px-3 py-2">
+            <div fxLayoutAlign="space-between center">
+                <h1 class="primary-font">Souriez !</h1>
+                <mat-icon class="text-muted">party_mode</mat-icon>
+            </div>
+            <div class="divider"></div>
+            <p class="rufin-class2"> Votre photo</p>
+            <form [formGroup]="VerificationCompteForm" (ngSubmit)="onInfoFormSubmit()">
+                <!-- Metre a jour la photo-->
+                <div fxFlex.gt-sm="80" class="px-3 mb-3 " style="margin-left: 40px; margin-right: 13px; ">
+                    <app-image-upload [base64]="VerificationCompteForm.controls.image.value" [fileSize]="600"
+                        [acceptTypes]="'image/png, image/jpeg, image/jpg'" (onFileChange)="fileChange($event)">
+                    </app-image-upload>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

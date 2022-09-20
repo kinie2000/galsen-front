@@ -1,0 +1,87 @@
+<div fxLayout="row wrap" fxLayoutAlign="end center" ngClass.xs="mb-3">
+</div>
+<!-- <mat-tab-group [selectedIndex]="selected" (selectedIndexChange)="onTabIndexChanged($event)" animationDuration="0"> -->
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <span>Identification du Permis de conduire</span>
+    
+        </ng-template>
+        <div class="o-hidden mt-4">
+
+            <div fxLayout="row wrap" class="flex-wrapper">
+                <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" class="p-3">
+                </div>
+                <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="p-3">
+                    <div class="bordered px-3 py-2">
+                        <div fxLayoutAlign="space-between center">
+                            <mat-icon class="text-muted">perm_identity</mat-icon>
+                        </div>
+                        <h1 class="secondary-font text-center mb-3">Identification</h1>
+                        <div class="divider"></div>
+                        <div class="pt-3">
+                            <p>
+                                Louez en toute sécurité ! En procédant à votre identification vous multipliez par 3 la
+                                confiance des personnes qui consultent votre profil. Cette procédure, simple et rapide,
+                                est obligatoire pour effectuer une réservation utilisant le service Galsen Auto Connect.
+                                Ces informations ne sont partagées qu'une fois votre réservation confirmée par un autre
+                                propriétaire Galsen Auto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" class="p-3">
+                </div>
+            </div>
+            <br /><br />
+
+            <form [formGroup]="infoFormPermisValide" (ngSubmit)="onInfoFormPermisValideSubmit()" autocomplete="off">
+
+                <div fxLayout="row wrap" class="flex-wrapper">
+                    <!-- 1 -->
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>N° du Permis</mat-label>
+                            <input readonly matInput  value="{{this.item?.driver_licenses_number}}" formControlName="driver_licenses_number" required>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+
+                    <!-- 2 -->
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+                        <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Date de délivrance</mat-label>
+                                <input readonly matInput  value="{{this.item?.driver_licenses_date}}" formControlName="driver_licenses_date" required>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+                        
+                        <!-- 3 -->
+                        <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Pays de délivrance</mat-label>
+                            <input readonly matInput  value="{{this.item?.driver_licenses_country}}" formControlName="driver_licenses_country" required>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+
+                    <!-- 4 -->
+                    <div fxFlex="100" fxFlex.gt-sm="37.5" class="px-3"></div>
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3">
+                    <div class="text-center">
+                        <button mat-raised-button color="primary" type="submit" class="w-100 uppercase"><span
+                                class="px-3 uppercase">
+                                <a routerLink="/compte-utilisateur/mon-compte/permis">modifier</a></span></button>
+                    </div>
+                </div>
+                    <div fxFlex="100" fxFlex.gt-sm="37.5" class="px-3"></div>
+
+                </div>
+
+            </form>
+        </div>
+    </mat-tab>
+</mat-tab-group>

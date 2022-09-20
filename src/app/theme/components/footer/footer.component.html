@@ -1,0 +1,98 @@
+<footer>
+    <div class="px-3">
+        <div class="theme-container">
+            <div class="py-5 content border-lighter">
+                <div fxLayout="row wrap" fxLayoutAlign="space-between">
+                    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="45">
+                        <a class="logo" routerLink="/">
+                            <app-logo [size]="true"></app-logo>
+                        </a>
+                        <p class="mt-4 mb-3 desc">
+                            GALSEN AUTO est une plateforme <br> sécurisée de location de voitures<br> et d’utilitaires basée sur la <br> consommation collaborative.<br> Le concept propose un usage plus<br> simple et plus flexible de la voiture<br> avec
+                            la possibilité pour l’utilisateur<br> locataire de louer un véhicule <br> en quelques clics, à chaque instant,<br> partout au Sénégal.</p>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="45">
+                        <h1 class="secondary-font">Liens rapides</h1>
+                        <p fxLayout="row" fxLayoutAlign="start center" class="mt-2">
+                            <span fxFlex.gt-sm="50" fxFlex.sm="50">
+                                <span>Qui sommes-nous?</span>
+                            </span>
+                            <span fxFlex.gt-sm="50" fxFlex.sm="50">
+                                <span>Mode l'emploi</span>
+                            </span>
+                        </p>
+                        <p fxLayout="row" fxLayoutAlign="start center" class="mt-1">
+                            <span fxFlex.gt-sm="50" fxFlex.sm="50">
+                                <span>S'inscrire</span>
+                            </span>
+                            <span fxFlex.gt-sm="50" fxFlex.sm="50">
+                                <span>Se connecter</span>
+                            </span>
+                        </p>
+                        <p fxLayout="row" fxLayoutAlign="start center" class="mt-1">
+                            <span fxFlex.gt-sm="50" fxFlex.sm="50">
+                                <span>Mot de passe <br>perdu</span>
+                            </span>
+                            <span fxFlex.gt-sm="50" fxFlex.sm="50">
+                                <span>Déposer une <br>voiture</span>
+                            </span>
+                        </p>
+                        <p fxLayout="row" fxLayoutAlign="start center" class="mt-1">
+                            <span fxFlex.gt-sm="50" fxFlex.sm="50">
+                                <span>Assurance</span>
+                            </span>
+                            <span fxFlex.gt-sm="50" fxFlex.sm="50">
+                                <span>FAQ</span>
+                            </span>
+                        </p>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="45">
+                        <h1 class="secondary-font">Contact</h1>
+                        <p fxLayout="row" fxLayoutAlign="start center" class="mt-2">
+                            <mat-icon color="primary">location_on</mat-icon>
+                            <span class="mx-2">Arafat 2 villa N°794, Rufisque,<br> Sénégal</span>
+                        </p>
+                        <p fxLayout="row" fxLayoutAlign="start center" class="mt-1">
+                            <mat-icon color="primary">call</mat-icon>
+                            <span class="mx-2">(+221) 77 516 89 18</span>
+                        </p>
+                        <p fxLayout="row" fxLayoutAlign="start center" class="mt-1">
+                            <mat-icon color="primary">mail_outline</mat-icon>
+                            <span class="mx-2">contact@galsenauto.com</span>
+                        </p>
+                        <p fxLayout="row" fxLayoutAlign="start center" class="mt-1">
+                            <mat-icon color="primary">schedule</mat-icon>
+                            <span class="mx-2">Lun - Dim / 8H30 - 12H30 <br>& 13H30 - 18H30</span>
+                        </p>
+                        <app-social-icons [iconSize]="'lg'" fxLayout="row" fxLayoutAlign="start center" class="desc"></app-social-icons>
+                    </div>
+
+                    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="45" ngClass.xs="pt-5">
+                        <h1 class="secondary-font">Ecrivez-nous</h1>
+                        <p class="desc">Nous voulons vos commentaires sur tout</p>
+                        <form [formGroup]="feedbackForm" (ngSubmit)="onFeedbackFormSubmit(feedbackForm.value)" class="custom-form pt-2">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>E-mail</mat-label>
+                                <input matInput autocomplete="off" formControlName="email">
+                                <mat-error *ngIf="feedbackForm.controls.email.errors?.required">Email is required</mat-error>
+                                <mat-error *ngIf="feedbackForm.controls.email.hasError('invalidEmail')">Invalid email address</mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Message</mat-label>
+                                <textarea matInput formControlName="message" rows="6"></textarea>
+                                <mat-error *ngIf="feedbackForm.controls.message.errors?.required">Message is required</mat-error>
+                            </mat-form-field>
+                            <div class="w-100 text-center">
+                                <button mat-flat-button color="primary" class="uppercase" type="submit">Envoyer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" class="copyright py-2">
+                <p ngClass.xs="mt-1">Copyright © {{year}} All Rights Reserved</p>
+                <p>Conçu & Développé par <a mat-button href="https://www.jainliconsulting.com/sn/" target="_blank">Jainli Consulting</a></p>
+            </div>
+        </div>
+    </div>
+</footer>

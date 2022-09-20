@@ -1,0 +1,59 @@
+<app-header-image [backgroundImage]="'assets/images/others/about-galsen.jpg'" [bgImageAnimate]="true" [contentOffsetToTop]="true" [title]="'À propos de nous'" [desc]="'PLUS D\'INFORMATIONS SUR NOTRE ÉQUIPE ET NOTRE SERVICE'">
+</app-header-image>
+
+<div class="px-3">
+    <div class="theme-container">
+        <mat-card class="main-content-header">
+            <div class="section pt-1 px-3">
+                <h1 class="section-title">Qui Sommes-Nous</h1>
+                <p>GALSEN AUTO est une plateforme sécurisée de location de voitures et d’utilitaires basée sur la consommation collaborative. Le concept propose un usage plus simple et plus flexible de la voiture avec la possibilité pour l’utilisateur locataire
+                    de louer un véhicule en quelques clics, à chaque instant, partout au Sénégal. La remise des clés s’effectue à domicile, au coin de la rue, en bas de son bureau, à l’aéroport, etc…</p>
+                <p>
+                    Toutes nos locations sont assurées tous risques par notre partenaire NSIA Assurance.
+                </p>
+                <div fxLayout="row wrap">
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="py-3">
+                        <img src="assets/images/others/about-galsen-1.jpg" alt="about-1" class="mw-100">
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="py-3" [ngClass.gt-sm]="(settings.rtl) ? 'pr-5' : 'pl-5'">
+                        <h1 class="secondary-font primary-color text-center">Notre Ambition</h1>
+                        <p>Notre ambition est, par ailleurs, de permettre à tout propriétaire d’une voiture ou d’un utilitaire de se faire un complément de revenus en créant et en gérant son business sur notre plateforme digitale sécurisée de dernière génération.
+                        </p>
+                        <p>Posséder un véhicule génère des charges supplémentaires aux ménages : assurance auto, l’entretien mécanique, remboursement crédit auto, carburant, parking et gardiennage, etc… En mettant occasionnellement son véhicule en location
+                            via notre plateforme, le propriétaire assume ces charges sans perte de pouvoir d’achat.</p>
+                    </div>
+                </div>
+
+                <div fxLayout="row wrap" class="mt-3">
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="py-3" [ngClass.gt-sm]="(settings.rtl) ? 'pl-5' : 'pr-5'">
+                        <h1 class="secondary-font primary-color text-center">Apport De Galsen Auto</h1>
+                        <p>Galsen-Auto se positionne aussi comme apporteur de solutions aux investisseurs et aux professionnels du secteur de la location de voitures et/ou d’utilitaires. La plateforme leur apporte les moyens d’une meilleure organisation
+                            en rendant visible leur offre par une communication optimisée et en mettant à leur disposition des moyens de suivi d’activité via notre application, mais aussi de sécurisation par notre assurance tous risques, notre système
+                            de sélection des locataires et la mise à disposition de balises de géolocalisation. </p>
+                        <p>Nous faisons ainsi bénéficier à nos locataires d’une solution bon marché, 30 à 40% moins chère que chez les loueurs traditionnels, pour se déplacer simplement et quand il le souhaite, le temps d’un week-end, d’un déménagement,
+                            d’un déplacement professionnel ou d’une semaine de vacances. Chacun y trouve son compte, c’est un service gagnant-gagnant !</p>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="50" class="py-3">
+                        <img src="assets/images/others/about-galsen-2.jpg" alt="about-2" class="mw-100">
+                    </div>
+                </div>
+
+                <div fxLayout="row wrap" class="flex-wrapper mt-3">
+                    <div fxFlex="100" class="px-3">
+                        <h2 class="secondary-font primary-color">Nos Heures De Service</h2>
+                    </div>
+                    <div *ngFor="let item of workingHours" fxFlex="100" fxFlex.gt-md="25" fxFlex.gt-sm="50" class="p-3">
+                        <mat-chip-list>
+                            <mat-chip color="primary" selected>{{item.day}}</mat-chip>
+                            <mat-chip>
+                                <mat-icon class="mr-1 text-muted">schedule</mat-icon>{{item.hours}}</mat-chip>
+                        </mat-chip-list>
+                    </div>
+                </div>
+
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+<app-question-insurance></app-question-insurance>

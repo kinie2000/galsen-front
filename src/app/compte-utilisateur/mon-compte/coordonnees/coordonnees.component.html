@@ -1,0 +1,160 @@
+<div fxLayout="row wrap" fxLayoutAlign="end center" ngClass.xs="mb-3">
+    <!-- <button mat-raised-button type="button" color="warn" (click)="deleteAddress()" class="mx-1"> 
+        <mat-icon fxHide="false" fxHide.gt-xs="true">delete</mat-icon>
+        <span fxShow="false" fxShow.gt-xs="true">Delete Address</span>
+    </button>
+	<button mat-raised-button type="button" color="primary" (click)="addAddress()">
+        <mat-icon fxHide="false" fxHide.gt-xs="true">add</mat-icon>
+        <span fxShow="false" fxShow.gt-xs="true">Add New Address</span>
+    </button> -->
+</div>
+<!-- <mat-tab-group [selectedIndex]="selected" (selectedIndexChange)="onTabIndexChanged($event)" animationDuration="0"> -->
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <span>Mes coordonnées</span>
+            <!-- <span >Mes coordonnéesSS</span> -->
+            <!-- <span *ngIf="i > 0">Shipping address <br><span *ngIf="i > 0 && addresses.controls.length > 2" class="mx-2">({{i}})</span> </span> -->
+        </ng-template>
+        <div class="o-hidden mt-4">
+            <form [formGroup]="infoFormcoordonnees" (ngSubmit)="onInfoFormCoordonneesSubmit()" autocomplete="off">
+
+                <div fxLayout="row wrap" class="flex-wrapper">
+                    <!-- 1 -->
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+                    <div fxFlex="100" fxFlex.gt-sm="20" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Civité</mat-label>
+                        <mat-select placeholder="Select civilite" formControlName="civilite" required>
+                            <mat-option *ngFor="let item of civilite" [value]="item.value">
+                                {{item.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                            <!-- <mat-error *ngIf="infoFormcoordonnees.controls.Nom.hasError('maxNumberOfWordsExceeded')">Max number of words exceeded</mat-error>  -->
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Nom</mat-label>
+                            <input matInput placeholder="Nom" formControlName="Nom" required value="{{this.item?.user_name}}">
+                            <mat-error *ngIf="infoFormcoordonnees.controls.Nom.errors?.required">Nom obligatoire
+                            </mat-error>
+                            <!-- <mat-error *ngIf="infoFormcoordonnees.controls.Nom.hasError('maxNumberOfWordsExceeded')">Max number of words exceeded</mat-error>  -->
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Prenom</mat-label>
+                            <input matInput placeholder="Prenom" formControlName="Prenom" required value="{{this.item?.user_surname}}" >
+                            <mat-error *ngIf="infoFormcoordonnees.controls.Prenom.errors?.required">Prenom obligatoire
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+                    <!-- 2 -->
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Date de naissaince</mat-label>
+                            <input matInput readonly placeholder="Date de naissaince" formControlName="DateNaissance"
+                                [matDatepicker]="datePickerEnd" appMaskDate>
+                            <mat-datepicker-toggle matSuffix [for]="datePickerEnd"></mat-datepicker-toggle>
+                            <mat-datepicker #datePickerEnd></mat-datepicker>
+                            <mat-error *ngIf="infoFormcoordonnees.controls.DateNaissance.errors?.required">Date de
+                                naissaince obligatoire</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Phone</mat-label>
+                            <input matInput placeholder="Enter your phone" formControlName="Phone" required value="{{this.item?.user_phone}}">
+                            <mat-error *ngIf="infoFormcoordonnees.controls.Phone.errors?.required">Phone obligatoire
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+
+                    <!-- 3 -->
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+                    <div fxFlex="100" fxFlex.gt-sm="80" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Quelques mots sur moi</mat-label>
+                            <textarea matInput placeholder="Quelques mots sur moi" formControlName="Quelquesmots"
+                                required rows="5" value="{{this.item?.user_description}}"></textarea>
+                            <mat-error *ngIf="infoFormcoordonnees.controls.Quelquesmots.errors?.required">Quelques mots
+                                sur toi sont obligatoire</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+
+
+                    <!-- 4 -->
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Adresse</mat-label>
+                            <input matInput placeholder="Place" formControlName="Place" value="{{this.item?.user_adress}}">
+                            <mat-error *ngIf="infoFormcoordonnees.controls.Place.errors?.required">Place is required
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Ville</mat-label>
+                            <input matInput placeholder="City" formControlName="city" required value="{{this.item?.user_city}}">
+                            <!-- <mat-error *ngIf="address.get('city')!.errors?.required">City is required</mat-error>  -->
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+
+
+                    <!-- 5 -->
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+                    
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Postal Code</mat-label>
+                            <input matInput placeholder="Postal Code" formControlName="PostalCode" value="{{this.item?.user_code_postal}}">
+                            <mat-error *ngIf="infoFormcoordonnees.controls.PostalCode.errors?.required">Postal Code is
+                                required</mat-error>
+                        </mat-form-field>
+                    </div>
+                    
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Pays</mat-label>
+                            <mat-select placeholder="Select country" formControlName="country" required>
+                                <mat-option *ngFor="let country of countries" [value]="country.code">
+                                    {{country.name}}
+                                </mat-option>
+                            </mat-select>
+                            <!-- <mat-error *ngIf="address.get('country')!.errors?.required">Country is required</mat-error> -->
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3">
+                    <div class="text-center">
+                        <button mat-raised-button color="primary" type="submit" class="w-100 uppercase"><span
+                                class="px-3 uppercase">mettre à jour</span></button>
+                    </div>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3">
+                    <div class="text-center">
+                        <button mat-raised-button color="primary"  class="w-100 uppercase" onclick = "history.back();"><span
+                           class="px-3 uppercase">Annuler</span></button>
+                     </div>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3"></div>
+
+                </div>
+            </form>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+<!-- <div class="text-center">
+  <button type="button" mat-raised-button color="primary" (click)="save()">
+    <span class="px-3 uppercase">Save</span></button>
+</div>  -->

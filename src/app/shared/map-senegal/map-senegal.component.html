@@ -1,0 +1,11 @@
+<div *ngIf="!mapHome" class="contact-map">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeControl]="true" [fullscreenControl]="true" [styles]="(settings.theme == 'orange-dark') ? mapStyles : null">
+        <agm-marker class="dBRNZm" *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng" [opacity]="marker.alpha" [label]="marker.labelOption" [markerDraggable]="true" (markerClick)="selectMarker($event)"></agm-marker>
+    </agm-map>
+</div>
+
+<div *ngIf="mapHome" class="contact-map-home">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeControl]="true" [fullscreenControl]="true" [styles]="(settings.theme == 'orange-dark') ? mapStyles : null">
+        <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]="false"></agm-marker>
+    </agm-map>
+</div>

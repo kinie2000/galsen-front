@@ -1,0 +1,102 @@
+[
+    {
+        "id": 11,
+        "name": "Nissan Leaf",
+        "description": "Voiture équipée du moteur le plus puissant de la gamme, elle intégre la technologie V2G(elle peut alimenter d'auutre appareils électrique).",
+        "price": 4.50,
+        "image": {
+            "small": "assets/images/cars/nissan-leaf.jpg",
+            "medium": "assets/images/cars/nissan-leaf.jpg",
+            "big": "assets/images/cars/nissan-leaf.jpg"
+        },
+        "discount": 0,
+        "ratingsCount": 3,
+        "ratingsValue": 280,
+        "availibilityCount": 8,
+        "cartCount": 0,
+        "weight": 5,
+        "numberOfPlaces": 5,
+        "isVegetarian": true,
+        "categoryId": 1
+    },
+    {
+        "id": 17,
+        "name": "Toyota Yaris HATCHBACK",
+        "description": "Voiture équipée d'un moteur Double VVT-I de 1,3L, elle offre un équilibre parfait entre performances et confort.",
+        "price": 8.20,
+        "image": {
+            "small": "assets/images/cars/toyota-yaris.jpg",
+            "medium": "assets/images/cars/toyota-yaris.jpg",
+            "big": "assets/images/cars/toyota-yaris.jpg"
+        },
+        "discount": 0,
+        "ratingsCount": 4,
+        "ratingsValue": 480,
+        "availibilityCount": 8,
+        "cartCount": 0,
+        "weight": 5,
+        "numberOfPlaces": 5,
+        "isVegetarian": false,
+        "categoryId": 1
+    },
+    {
+        "id": 20,
+        "name": "Mercedes-Benz CLA",
+        "description": "Voiture équipée d'un moteur 200 CGI diesel de 2143 cm3 à 4 cylindres en ligne.",
+        "price": 18.50,
+        "image": {
+            "small": "assets/images/cars/mercedes-cla-220-2015.jpg",
+            "medium": "assets/images/cars/mercedes-cla-220-2015.jpg",
+            "big": "assets/images/cars/mercedes-cla-220-2015.jpg"
+        },
+        "discount": 0,
+        "ratingsCount": 4,
+        "ratingsValue": 480,
+        "availibilityCount": 5,
+        "cartCount": 0,
+        "weight": 5,
+        "numberOfPlaces": 5,
+        "isVegetarian": false,
+        "categoryId": 2
+    },
+    {
+        "id": 25,
+        "name": "Hyundai Tucson",
+        "description": "Voiture équipée d'un moteur L4 2.0L DACT 16 soupages, utilitaire sportif constitue de 5 portières et 5 places.",
+        "price": 12.50,
+        "image": {
+            "small": "assets/images/cars/hyundai-tucson-2018.jpg",
+            "medium": "assets/images/cars/hyundai-tucson-2018.jpg",
+            "big": "assets/images/cars/hyundai-tucson-2018.jpg"
+        },
+        "discount": 0,
+        "ratingsCount": 4,
+        "ratingsValue": 480,
+        "availibilityCount": 5,
+        "cartCount": 0,
+        "weight": 5,
+        "numberOfPlaces": 5,
+        "isVegetarian": false,
+        "categoryId": 1
+    },
+    {
+        "id": 27,
+        "name": "Hyundai Grand i10",
+        "description": "Voiture équipée d'un moteur 1.2 kappa double VTVT essence, elle offre une transmission manuel de 5 vitesses.",
+        "price": 9.50,
+        "image": {
+            "small": "assets/images/cars/sa600.jpg",
+            "medium": "assets/images/cars/sa600.jpg",
+            "big": "assets/images/cars/sa600.jpg"
+        },
+        "discount": 0,
+        "ratingsCount": 4,
+        "ratingsValue": 480,
+        "availibilityCount": 5,
+        "cartCount": 0,
+        "weight": 5,
+        "numberOfPlaces": 5,
+        "isVegetarian": false,
+        "categoryId": 1
+    }
+]

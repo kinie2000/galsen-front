@@ -1,0 +1,80 @@
+<div fxLayout="row wrap">
+    <div fxFlex="100">
+        <h2 class="secondary-font text-center mb-3">Vérifications</h2>
+    </div>
+    <!-- verification Email -->
+
+
+    <form [formGroup]="infoFormEmail" (ngSubmit)="onInfoFormSubmit()" autocomplete="off">
+        <div fxFlex="100" fxFlex.gt-sm="60" class="px-3" ngClass.sm="mt-2" ngClass.xs="mt-2">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" formControlName="email" required>
+                <mat-error *ngIf="infoFormEmail.controls.email.errors?.required">Email is required</mat-error>
+                <mat-error *ngIf="infoFormEmail.controls.email.hasError('invalidEmail')">Invalid email address
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="10" class="px-3 mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Status</mat-label>
+                <input matInput placeholder="Status" formControlName="facebook">
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="30" class="px-3 mb-3">
+            <button mat-raised-button color="primary" type="submit" class="w-100 uppercase">mettre à jour</button>
+        </div>
+    </form>
+
+
+    <!-- verification N° telephone -->
+    <form [formGroup]="infoFormPhone" (ngSubmit)="onInfoFormSubmit()">
+        <div fxFlex="100" fxFlex.gt-sm="60" class="px-3" ngClass.sm="mt-2" ngClass.xs="mt-2">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Phone</mat-label>
+                <input matInput placeholder="Phone" formControlName="phone" required onlyNumber>
+                <mat-error *ngIf="infoFormPhone.controls.phone.errors?.required">Phone is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="10" class="px-3 mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Status</mat-label>
+                <input matInput placeholder="Status" formControlName="facebook">
+            </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="30" class="px-3 mb-3">
+            <button mat-raised-button color="primary" type="submit" class="w-100 uppercase">mettre à jour</button>
+        </div>
+    </form>
+    
+    <form [formGroup]="infoForm" (ngSubmit)="onInfoFormSubmit()">
+        <!-- Metre a jour la photo-->
+        <div fxFlex="100" fxFlex.gt-sm="41" class="px-3 mb-3">
+            <app-image-upload [base64]="infoForm.controls.image.value" [fileSize]="400"
+                [acceptTypes]="'image/png, image/jpeg, image/jpg'" (onFileChange)="fileChange($event)">
+            </app-image-upload>
+        </div>
+
+        <div fxFlex="100" fxFlex.gt-sm="7" class="px-3 mb-3">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Status</mat-label>
+                <input matInput placeholder="Status" formControlName="facebook">
+            </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="20" class="px-3 mb-3">
+            <button mat-raised-button color="primary" type="submit" class="w-100 uppercase">mettre à jour</button>
+        </div>
+    </form>
+
+
+
+
+
+
+    <!-- <div fxFlex="100" class="text-center mt-2">
+        <button mat-raised-button color="primary" type="submit" class="uppercase">Update profile</button>
+    </div> -->
+
+</div>

@@ -1,0 +1,99 @@
+
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <span>Ajouter un sinistre</span>
+
+        </ng-template>
+        <div class="o-hidden mt-4">
+            <form [formGroup]="Formcar" autocomplete="off" (ngSubmit)="onInfoFormCoordonneesSubmit()">
+                <div fxLayout="row wrap" class="flex-wrapper">
+                
+                    <!-- <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>lieu de l'accident'</mat-label>
+                            <app-search-adress (newItemEvent)="addItem($event)"></app-search-adress> -->
+                            <!-- <input matInput formControlName="vehicule_address" placeholder="Ex. 1 Main St, New York, NY"> -->
+                        <!-- </mat-form-field>
+                    </div> -->
+                    
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        
+                            <app-search-adresse-accident (newItemEvent)="addItemAcc($event)"></app-search-adresse-accident>
+                    </div>
+                   
+
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Date de l'accident'</mat-label>
+                            <input matInput formControlName="date_acc" [matDatepicker]="picker5" [min]="minDateStart">
+                            <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                            <mat-datepicker #picker5></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <app-search-adresse-actuel (newItemEvent)="addItemAct($event)"></app-search-adresse-actuel>
+                    </div>
+
+
+                    
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Degats du vehicule(precisez si la voiture est utilisable)</mat-label>
+                            <input matInput formControlName="degat" placeholder="Ex. 1 Main St, New York, NY">
+                        </mat-form-field>
+                    </div>
+                <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                    <mat-label>Images du vehicules</mat-label>
+                    <input formControlName="file" id="file" type="file" class="form-control" multiple="" (change)="onFileChange($event)">
+                    </div>
+                    <img *ngFor='let url of images' [src]="url" height="150" width="200px" style="margin: 3px;">
+                </div>
+                <div fxLayout="row wrap" class="flex-wrapper">
+                    <div fxFlex="100" fxFlex.gt-sm="70" class="px-3">
+                        <div class="container">
+                            <div class="row">
+                                <div class="o-hidden mt-4">
+                                    <div fxLayout="row wrap">
+                                        <h4> Decrivez votre accident.</h4>
+
+                                        <div fxFlex="100" class="px-3">
+                                            <mat-form-field appearance="outline" class="w-100">
+                                                <mat-label>Decrivez votre accident.
+                                                </mat-label>
+                                                <textarea matInput
+                                                    placeholder="vehicule_description (street, apartment, suite, unit etc.)"
+                                                    formControlName="sinister_description" rows="5"></textarea>
+
+                                            </mat-form-field>
+                                        </div>
+                                      
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div fxLayout="row wrap" class="flex-wrapper">
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <div class="text-center">
+                            <button mat-raised-button color="primary" type="submit" class="w-100 uppercase"><span
+                                    class="px-3 uppercase">Enregistrer</span></button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </form>
+        </div>
+    </mat-tab>
+</mat-tab-group>

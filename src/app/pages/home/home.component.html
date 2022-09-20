@@ -1,0 +1,87 @@
+<app-header-image *ngIf="settings.header == 'image'" [backgroundImage]="'assets/images/others/homePageGalsen.png'" [bgImageAnimate]="true" [contentOffsetToTop]="true" [title]="'Louez un véhicule'" [desc]="'en quelques clics'" [isHomePage]="true" [fullscreen]="false"
+    [menuSearch]="true">
+</app-header-image>
+
+<app-header-carousel *ngIf="settings.header == 'carousel'" [slides]="slides" [contentOffsetToTop]="false" [fullscreen]="false">
+</app-header-carousel>
+
+<app-header-video *ngIf="settings.header == 'video'" [backgroundVideo]="'http://themeseason.com/data/videos/restaurant.mp4'" [contentOffsetToTop]="true" [title]="'Welcome to Restaurant'" [desc]="'Booking a table online is easy'" [isHomePage]="true" [fullscreen]="false">
+</app-header-video>
+<app-menu-advantages></app-menu-advantages>
+
+<div class="section mt-3">
+    <div class="px-3">
+        <div class="theme-container">
+            <h1 class="section-title">À propos de nous</h1>
+            <p class="section-desc text-muted">Rendre la mobilité plus accessible, plus facile et plus responsable grâce au partage est la mission qui nous anime.</p>
+            <mat-card class="p-0 o-hidden" fxLayout="row wrap">
+                <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50">
+                    <img src="assets/images/others/homme_volant.jpg" alt="about" class="mw-100 d-block">
+                </div>
+                <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="py-3 px-4">
+                    <h1 class="secondary-font primary-color mb-2">Depuis 2022, à votre service</h1>
+                    <p> Galsen Auto est le premier site dédié à la location de voitures entre particuliers au Sénégal. Pionnier de l'economie collaboratives, Galsen Auto propose à chacun de repenser son rapport à la voiture en privilégiant son usage plutôt
+                        que sa propriéte</p>
+                    <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="pt-3">
+                        <img src="assets/images/others/signature.png" alt="signature">
+                        <a mat-raised-button routerLink="/about" color="primary" class="uppercase">Lire la suite</a>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<div class="section default mt-3">
+    <div class="px-3">
+        <div class="theme-container">
+            <h1 class="section-title">Louez une voiture à deux pas</h1>
+            <p class="section-desc text-muted">Des véhicules de qualité mise à votre disposition.</p>
+            <app-menu-items-carousel [menuItems]="specialMenuItems"></app-menu-items-carousel>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <a mat-raised-button routerLink="/vehicules-disponibles" color="primary" class="uppercase">Tous les vehicules disponibles</a>
+            </div>
+        </div>
+    </div>
+</div>
+<app-get-app-galsen [backgroundImage]="'assets/images/others/homme_voiture.jpg'"></app-get-app-galsen>
+
+<app-our-services-galsen></app-our-services-galsen>
+
+<app-question-insurance></app-question-insurance>
+
+<app-testimonials-galsen></app-testimonials-galsen>
+
+<!-- <div class="section default mt-3">
+    <div class="px-3">
+        <div class="theme-container">
+            <h1 class="section-title">Our best dishes</h1>
+            <p class="section-desc text-muted">The best dishes of the city for our clients.</p>
+            <app-menu-items-carousel [menuItems]="bestMenuItems"></app-menu-items-carousel>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <a mat-raised-button routerLink="/menu" color="primary" class="uppercase">View all menu</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-our-services></app-our-services>
+<app-our-chefs></app-our-chefs>
+<app-timeline></app-timeline>
+
+<div class="section">
+    <div class="px-3">
+        <div class="theme-container">
+            <h1 class="section-title mb-3">Reservation</h1>
+            <p class="section-desc text-muted">We provide free, secure and instantly confirmed online reservation.</p>
+            <mat-card class="p-0" ngClass.lt-md="px-2 pb-2">
+                <app-reservation-form></app-reservation-form>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<app-testimonials></app-testimonials>
+<app-get-app></app-get-app>
+<app-our-awards></app-our-awards> -->
+<!-- <app-get-in-touch></app-get-in-touch> -->

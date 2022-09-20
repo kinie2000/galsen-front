@@ -1,0 +1,58 @@
+<div fxLayout="row wrap"> 
+
+    <!-- preference -->
+    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" class="p-3"></div>
+    <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="p-3">
+        <div class="pt-3">    
+            <a routerLink="/compte-utilisateur/mon-compte/mes-parametres" class="primary-color fw-500">
+        <h1 class="bg-primary secondary-font text-center " >Préférences de communication</h1>
+    </a>
+    </div>
+    <div class="pt-3">    
+        <a routerLink="/compte-utilisateur/mon-compte/changer-password" class="primary-color fw-500">
+    <h1 class="bg-primary secondary-font text-center " >Changer le mot de passe</h1>
+</a>
+</div>
+
+    
+
+    <div class="pt-3">  
+        <!-- changer le mot de passe -->
+    
+        <h1 class="secondary-font text-center mb-3">Mettre à jour mon numero de téléphone</h1>
+        <form [formGroup]="NumeroTelephonForm" (ngSubmit)="onNumeroTelephoneFormSubmit()" autocomplete="off">            
+            <br/><br/><br/>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Mettre à jour mon numero de téléphone</mat-label>
+                <input matInput placeholder="Mettre à jour mon numero de téléphon" formControlName="phone"  required>
+                <mat-error *ngIf="NumeroTelephonForm.controls.phone.errors?.required">Numero de telephone obligatoire</mat-error>    
+            </mat-form-field> 
+            <div class="text-center mt-2">
+                <button mat-raised-button color="primary" type="submit" class="uppercase">
+                    <!-- <a routerLink="/compte-utilisateur/mon-compte/code-validation-numero-telephone">Valider
+                    </a> -->
+                    Valider
+                    
+                    </button>
+            </div>
+        </form>
+    </div>
+    <div class="pt-3">  
+        <a routerLink="/compte-utilisateur/mon-compte/change-email" class="primary-color fw-500">
+    <h1 class="bg-primary secondary-font text-center " >Changer d’adresse email</h1>
+    </a>
+    </div>
+    
+    <div class="pt-3">
+        <a routerLink="/compte-utilisateur/mon-compte/changer-password" class="primary-color fw-500">
+    <h1 class="bg-primary secondary-font text-center " >Supprimer mon compte</h1>
+    </a>
+    </div>
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" class="p-3"></div>
+
+
+
+
+    
+</div> 

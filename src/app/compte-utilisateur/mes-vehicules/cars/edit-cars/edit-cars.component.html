@@ -1,0 +1,259 @@
+
+<!-- <mat-tab-group [selectedIndex]="selected" (selectedIndexChange)="onTabIndexChanged($event)" animationDuration="0"> -->
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <span>Mes coordonnées</span>
+            <!-- <span >Mes coordonnéesSS</span> -->
+            <!-- <span *ngIf="i > 0">Shipping address <br><span *ngIf="i > 0 && addresses.controls.length > 2" class="mx-2">({{i}})</span> </span> -->
+        </ng-template>
+        <div class="o-hidden mt-4">
+            <form [formGroup]="Formcar"  autocomplete="off" (ngSubmit)="onInfoFormCoordonneesSubmit()">
+
+                <div fxLayout="row wrap" class="flex-wrapper">
+                    
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Marque</mat-label>
+                <mat-select formControlName="vehicule_mark" value="{{this.item?.mark_lib}}" placeholder="{{this.item?.mark_lib}}">
+                        <mat-option *ngFor="let item of allmark" [value]="item.id" (click)="selectionMark(item.id)">
+                            {{item.mark_lib}}
+                        </mat-option>
+                </mat-select>
+            </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Modele</mat-label>
+                <mat-select formControlName="vehicule_model" value="{{this.item?.mod_lib}}" placeholder="{{this.item?.mod_lib}}">
+                    <mat-option *ngFor="let item of allmodel" [value]="item.id" (click)="selectionModel(item.id)">
+                        {{item.mod_lib}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>type</mat-label>
+                <mat-select formControlName="vehicule_type" value="{{this.item?.typ_lib}}" placeholder="{{this.item?.typ_lib}}">
+                    <mat-option *ngFor="let item of alltyp" [value]="item.id" (click)="selectiontyp(item.id)">
+                        {{item.typ_lib}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+               
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Energie</mat-label>
+                <mat-select formControlName="vehicule_energy" value="{{this.item?.energy_lib}}" placeholder="{{this.item?.energy_lib}}">
+                    <mat-option *ngFor="let item of allenerg" [value]="item.id" (click)="selectenergi(item.id)">
+                        {{item.energy_lib}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+            
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Boite de vitesse</mat-label>
+                <mat-select formControlName="vehicule_VitesseBox" value="{{this.item?.gearboxe_lib}}" placeholder="{{this.item?.gearboxe_lib}}">
+                    <mat-option *ngFor="let item of allbtvt" [value]="item.id" (click)="selectbtv(item.id)">
+                        {{item.gearboxe_lib}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Nombre de place</mat-label>
+                <mat-select formControlName="vehicule_NbrPlace" value="{{this.item?.number_place_limit}}" placeholder="{{this.item?.number_place_limit}}">
+                    <mat-option *ngFor="let item of allnbrpl" [value]="item.id" (click)="selectnbrpl(item.id)">
+                        {{item.number_place_limit}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Nombre de porte</mat-label>
+                <mat-select formControlName="vehicule_NbrPorte" value="{{this.item?.number_door_limit}}" placeholder="{{this.item?.number_door_limit}}">
+                    <mat-option *ngFor="let item of allnbrport" [value]="item.id">
+                        {{item.number_door_limit}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                <mat-label>Status</mat-label>
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-select formControlName="status" value="{{this.item?.status}}" placeholder="{{this.item?.status}}">
+                        <mat-option *ngFor="let item of status" [value]="item.value">
+                            {{item.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+            <mat-form-field appearance="outline" class="w-100"> 
+                <mat-label>Kilométrage</mat-label>
+                <input matInput placeholder="Last name, First name" formControlName="vehicule_Kilometrage"  value="{{this.item?.vehicle_mileage}}">
+            </mat-form-field>
+            </div>
+          </div>
+        <div fxLayout="row wrap" class="flex-wrapper">
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Date prochain controle</mat-label>
+                <input matInput formControlName="vehicule_date_next_controle" [matDatepicker]="picker2" value="{{this.item?.vehicle_date_next_control}}">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Date de debut assurance</mat-label>
+                    <input matInput formControlName="inssurance_date_start" [matDatepicker]="picker3" value="{{this.item?.vehicle_date_start_insurance}}">
+                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                    <mat-datepicker #picker3></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Date de fin assurance</mat-label>
+                    <input matInput formControlName="inssurance_date_end" [matDatepicker]="picker4" value="{{this.item?.vehicle_date_end_insurance}}">
+                    <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                    <mat-datepicker #picker4></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Immatriculation</mat-label>
+                <input matInput formControlName="vehicule_immatriculation" placeholder="Ex. 1 Main St, New York, NY"  value="{{this.item?.vehicle_registration}}">
+            </mat-form-field>
+            </div>
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Numéro d’assurance</mat-label>
+                <input matInput formControlName="inssurance_number" placeholder="Ex. 1 Main St, New York, NY"  value="{{this.item?.vehicle_number_insurance}}">
+            </mat-form-field>
+            </div>
+           
+            
+                <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>valeur de la voiture</mat-label>
+                        <input matInput formControlName="vehicule_value" placeholder="Ex. 1 Main St, New York, NY"  value="{{this.item?.vehicle_mileage}}">
+                    </mat-form-field>
+                </div>
+                 </div>
+                
+         
+            
+        <div fxLayout="row wrap" class="flex-wrapper">
+            <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Adresse de la voiture</mat-label>
+                    <input matInput formControlName="vehicule_address" placeholder="Ex. 1 Main St, New York, NY"  value="{{this.item?.vehicle_adress}}">
+                </mat-form-field>
+            </div>
+                    
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Date de disponibilité</mat-label>
+                        <input matInput formControlName="vehicule_dispo" [matDatepicker]="picker5" value="{{this.item?.vehicle_mileage}}">
+                        <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                        <mat-datepicker #picker5></mat-datepicker>
+                    </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Prix de la location par jour hors KM</mat-label>
+                        <input matInput formControlName="prixkmjr" placeholder="Ex. 1 Main St, New York, NY"  value="{{this.item?.vehicle_price_location}}">
+                    </mat-form-field>
+                  </div>
+               </div>
+            <div fxLayout="row wrap" class="flex-wrapper">
+                <!-- <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                    <label for="file">File</label>
+                    <input formControlName="file" id="file" type="file" class="form-control" multiple="" (change)="onFileChange($event)">
+                    <!-- <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+                            <div *ngIf="f.file.errors && f.file.errors.required">File is required.</div>
+                        </div> -->
+                    <!-- <img *ngFor='let url of images' [src]="url" height="150" width="200px" style="margin: 3px;"> <br />
+            </div> --> -->
+            <div fxFlex="100" fxFlex.gt-sm="70" class="px-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="o-hidden mt-4">
+                            <div fxLayout="row wrap">
+                                <h4> Présentation de votre véhicule aux locataires Mettez en avant les qualités de votre vehicule, sans
+                                    pour autant oublier
+                                    d'ecrire ses petits défauts.</h4>
+                
+                                <div fxFlex="100" class="px-3">
+                                    <mat-form-field appearance="outline" class="w-100">
+                                        <mat-label>Decriverz votre vehicule avec le plus de détails possible.
+                                        </mat-label>
+                                        <textarea matInput placeholder="vehicule_description (street, apartment, suite, unit etc.)"
+                                            formControlName="vehicule_description"  rows="5" value="{{this.item?.vehicle_description}}"></textarea>
+                                    
+                                    </mat-form-field>
+                                </div>
+                                <mat-divider></mat-divider>
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                                    <label class="form-label"> Equipement classique(facultatif) </label>
+                
+                                    <section class="example-section">
+                                        <mat-checkbox class="example-margin" formControlName="Sec_ESP">ESP</mat-checkbox>
+                                        <mat-checkbox class="example-margin" formControlName="Sec_Rad">Radio</mat-checkbox>
+                                        <mat-checkbox class="example-margin" formControlName="Sec_Air">AirBag</mat-checkbox>
+                                        <mat-checkbox class="example-margin" formControlName="Sec_ABS">ABS</mat-checkbox>
+                                        <mat-checkbox class="example-margin" formControlName="Sec_Direc">Direction assistée
+                                        </mat-checkbox>
+                
+                                    </section>
+                                </div>
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                                    <label class="form-label"> Equipement pratiques(facultatif) </label>
+                
+                                    <section class="example-section">
+                                        <mat-checkbox class="example-margin" formControlName="Sec_sieg_enf">Siege enfant</mat-checkbox>
+                                        <mat-checkbox class="example-margin" formControlName="Sec_GPS">GPS(systeme de navigation)
+                                        </mat-checkbox>
+                                        <mat-checkbox class="example-margin" formControlName="Sec_cof">Coffre de toit</mat-checkbox>
+                                        <mat-checkbox class="example-margin" formControlName="Sec_pneu">Pneus neige</mat-checkbox>
+                
+                                    </section>
+                                </div>
+                                <mat-divider></mat-divider>
+                
+                
+                            </div>
+                
+                        </div>
+                    </div>
+                
+                   
+                </div>
+            </div>
+
+    </div>
+            <div fxLayout="row wrap" class="flex-wrapper">
+                <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                    <div class="text-center">
+                        <button mat-raised-button color="primary" type="submit" class="w-100 uppercase"><span class="px-3 uppercase">mettre à jour</span></button>
+                    </div>
+             </div>
+         </div>
+    
+   
+    
+    
+            </form>
+        </div>
+    </mat-tab>
+</mat-tab-group>

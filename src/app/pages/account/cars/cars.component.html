@@ -1,0 +1,95 @@
+<mat-card class="m-2 p-0">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="w-100 p-2">
+        <div></div>
+        <button mat-raised-button color="primary" (click)="openCustomerDialog(null)">
+            <mat-icon>add</mat-icon>
+            Ajouter un Nouveau vehicule
+        </button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="table-wrapper"> 
+        <table mat-table [dataSource]="dataSource" matSort class="w-100">
+        
+            <!-- FullName Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Marque </th>
+                <td mat-cell *matCellDef="let user">{{user.user_name}} </td>
+            </ng-container>  
+
+            <!-- Username Column -->
+            <ng-container matColumnDef="surname">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date d'enregistrement </th>
+                <td mat-cell *matCellDef="let user">{{user.surname}} </td>
+            </ng-container> 
+    
+            <!-- Email Column -->
+            <!-- <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                <td mat-cell *matCellDef="let user">{{user.email}}</td>
+            </ng-container>   -->
+            
+            <!-- Store Column -->
+            <!-- <ng-container matColumnDef="tel">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Tel </th>
+                <td mat-cell *matCellDef="let user">{{user.user_phone}}</td>
+            </ng-container>    -->
+
+            <!-- <ng-container matColumnDef="adresse">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> adresse </th>
+                <td mat-cell *matCellDef="let user">{{user.user_adress}}</td>
+            </ng-container>    -->
+
+            <!-- Wallet Balance Column -->
+            <!-- <ng-container matColumnDef="cni">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> CNI </th>
+                <td mat-cell *matCellDef="let user">{{user.user_cni}}</td>
+            </ng-container>  -->
+
+            <!-- Revenue Column -->
+            <!-- <ng-container matColumnDef="city">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> city </th>
+                <td mat-cell *matCellDef="let user">{{user.user_city}}</td>
+            </ng-container>  
+
+            <ng-container matColumnDef="country">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> country </th>
+                <td mat-cell *matCellDef="let user">{{user.user_country}}</td>
+            </ng-container>   -->
+    
+            <ng-container matColumnDef="status">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef>Statut</th>
+                <td mat-cell *matCellDef="let user">
+                    <div fxLayoutAlign="start start">
+                        <div class="rounded mrgn-r-xs success-bg status-icon" *ngIf="user.user_status=='NON-VALIDER'"></div>
+                        <div class="rounded mrgn-r-xs accent-bg status-icon" *ngIf="user.user_status'VALIDER'"></div>
+                        </div>
+                        <div class="status-text" *ngIf="user.user_status=='VALIDER'">
+                            <div>VALIDER</div>
+                            <div class="mat-text-muted">VALIDER</div>
+                        </div>
+                        <div class="status-text" *ngIf="user.user_status=='NON-VALIDER'">
+                            <div>NON-VALIDER</div>
+                            <div class="mat-text-muted">NON-VALIDER</div>
+                        </div>
+                </td>
+            </ng-container>
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                <td mat-cell *matCellDef="let user"> 
+                    <button mat-icon-button color="primary" (click)="openCustomerDialog(user)" matTooltip="Edit">
+                        <mat-icon>edit</mat-icon>
+                    </button> 
+                    <button mat-icon-button color="warn" (click)="remove(user)" matTooltip="Remove">
+                        <mat-icon>delete</mat-icon>
+                    </button>  
+                </td>
+            </ng-container> 
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let user; columns: displayedColumns;"></tr>
+        </table> 
+        <p *ngIf="dataSource && dataSource.data.length === 0" class="py-5 mb-0 text-center">No data available</p> 
+    </div>
+    <mat-paginator showFirstLastButtons [pageSizeOptions]="[5, 10, 25, 50]"></mat-paginator>
+</mat-card>

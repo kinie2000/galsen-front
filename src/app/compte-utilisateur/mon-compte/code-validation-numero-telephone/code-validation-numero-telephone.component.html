@@ -1,0 +1,58 @@
+<div fxLayout="row wrap"> 
+
+    <!-- preference -->
+    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" class="p-3"></div>
+    <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="p-3">
+        <div class="pt-3">    
+            <a routerLink="/compte-utilisateur/mon-compte/mes-parametres" class="primary-color fw-500">
+        <h1 class="bg-primary secondary-font text-center " >Préférences de communication</h1>
+    </a>
+    </div>
+    <div class="pt-3">    
+        <a routerLink="/compte-utilisateur/mon-compte/changer-password" class="primary-color fw-500">
+    <h1 class="bg-primary secondary-font text-center " >Changer le mot de passe</h1>
+</a>
+</div>
+    
+
+    <div class="pt-3">  
+        <!-- changer le mot de passe -->
+        <h1 class="secondary-font text-center mb-3">Code de validation due Numero de téléphone</h1>
+        <div class="divider"></div>
+        <form [formGroup]="passwordForm" (ngSubmit)="onPasswordFormSubmit()" autocomplete="off">            
+            <br/><br/><br/>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Code validation du Numero de telephone</mat-label>
+
+                <input matInput placeholder="Numero de telephone" formControlName="verification_code" type="email" minlength="6" required>
+                <mat-error *ngIf="passwordForm.controls.verification_code.errors?.required">New Password is required</mat-error>
+                <mat-error *ngIf="passwordForm.controls.verification_code.hasError('minlength')">New Password isn't long enough, minimum of 6 characters</mat-error>
+
+            </mat-form-field> 
+            <div class="text-center mt-2">
+                <button mat-raised-button color="primary" type="submit" class="uppercase">
+                    metre à jour
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="pt-3">  
+        <a routerLink="/compte-utilisateur/mon-compte/change-email" class="primary-color fw-500">
+    <h1 class="bg-primary secondary-font text-center " >Changer d’adresse email</h1>
+    </a>
+    </div>
+    
+    <div class="pt-3">
+        <a routerLink="/compte-utilisateur/mon-compte/changer-password" class="primary-color fw-500">
+    <h1 class="bg-primary secondary-font text-center " >Supprimer mon compte</h1>
+    </a>
+    </div>
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" class="p-3"></div>
+
+
+
+
+    
+</div> 

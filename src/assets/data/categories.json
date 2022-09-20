@@ -1,0 +1,6 @@
+[
+    { "id": 1, "name": "Véhicules SUV", "description": "Grande voiture construite sur un châssis de carrosserie sur le cadre" },
+    { "id": 2, "name": "Véhicules Berlines", "description": "Ce modèle se distingue par sa structure plus longue et plus allongée qui possède deux rangées de sièges permettant de s’asseoir confortablement à l’avant comme à l’arrière. La majorité des berlines ont 4 portes mais certains modèles n’en ont que deux" },
+    { "id": 3, "name": "Véhicules 4x4", "description": "véhicule tout-terrain " }
+
+]

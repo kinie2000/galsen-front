@@ -1,0 +1,142 @@
+<div fxLayout="row wrap" fxLayoutAlign="end center" ngClass.xs="mb-3">
+</div>
+<!-- <mat-tab-group [selectedIndex]="selected" (selectedIndexChange)="onTabIndexChanged($event)" animationDuration="0"> -->
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <span>Mes coordonnées</span>
+    
+        </ng-template>
+        <div class="o-hidden mt-4">
+            <form [formGroup]="infoFormcoordonneesValide" (ngSubmit)="onInfoFormCoordonneesValideSubmit()" autocomplete="off">
+
+                <div fxLayout="row wrap" class="flex-wrapper">
+                    <!-- 1 -->
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+                    <div fxFlex="100" fxFlex.gt-sm="20" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Civité</mat-label>
+
+                            <input readonly matInput  formControlName="civilite"  value="{{this.item?.user_sex}}" required>                            
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Nom</mat-label>
+
+                            <input readonly matInput  placeholder="Nom"value="{{this.item?.user_name}}" formControlName="Nom" required >                    
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="30" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Prenom</mat-label>
+
+                            <input readonly matInput  value="{{this.item?.user_surname}}" formControlName="Prenom" required >                    
+
+                        </mat-form-field>
+                    </div>
+                    
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+
+                    <!-- 2 -->
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+
+                        <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Date de naissaince</mat-label>
+
+                                <input readonly matInput  value="{{this.item?.user_datenais}}" formControlName="DateNaissance" required>
+
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Phone</mat-label>
+
+                                <input readonly matInput  value="{{this.item?.user_phone}}" formControlName="Phone" required>
+
+                            </mat-form-field>
+                        </div>
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+
+                    <!-- 3 -->
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+
+                    <div fxFlex="100" fxFlex.gt-sm="80" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Quelques mots sur moi</mat-label>
+
+                            <textarea readonly matInput  value="{{this.item?.user_description}}" formControlName="Quelquesmots"> </textarea>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+
+                    <!-- 4 -->
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Adresse</mat-label>
+
+                            <input readonly matInput  value="{{this.item?.user_adress}}" formControlName="Place" required>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Ville</mat-label>
+
+                            <input readonly matInput  value="{{this.item?.user_city}}" formControlName="city" required>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+
+
+                    <!-- 5 -->
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+                    
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Postal Code</mat-label>
+
+                            <input readonly matInput  value="{{this.item?.user_code_postal}}" formControlName="PostalCode" required>
+
+                        </mat-form-field>
+                    </div>
+
+                    <div fxFlex="100" fxFlex.gt-sm="40" class="px-3">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Pays</mat-label>
+
+                            <input readonly matInput  value="{{this.item?.user_country}}" formControlName="country" required>
+
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="10" class="px-3"></div>
+
+
+                    <div fxFlex="100" fxFlex.gt-sm="37.5" class="px-3"></div>
+                    <div fxFlex="100" fxFlex.gt-sm="25" class="px-3">
+
+                    <div class="text-center">
+                        <button mat-raised-button color="primary" type="submit" class="w-100 uppercase"><span
+                                class="px-3 uppercase">
+                                <a routerLink="/compte-utilisateur/mon-compte/mes-coodonnees">modifier</a></span></button>
+                    </div>
+                </div>
+
+                    <div fxFlex="100" fxFlex.gt-sm="37.5" class="px-3"></div>
+                </div>
+
+            </form>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+
+

@@ -1,0 +1,41 @@
+<button mat-icon-button [matMenuTriggerFor]="userMenu" #userMenuTrigger="matMenuTrigger" >
+    <mat-icon>account_circle</mat-icon>
+</button>
+
+<mat-menu #userMenu="matMenu" [overlapTrigger]="false" class="toolbar-dropdown-menu admin-user-menu">
+    <span (mouseleave)="userMenuTrigger.closeMenu()">
+        <mat-toolbar color="primary">
+           
+            <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info">
+                <img [src]="userImage"  width="80" class="mat-elevation-z6">
+                <p class="mb-0"> {{userDetails?.name}}{{userDetails?.user_name}}<br> <small>{{userDetails?.email}}</small></p>
+            </div>
+        </mat-toolbar>
+
+        <a mat-menu-item routerLink="/compte-utilisateur/mes-vehicules/ajouter-vehicule"> 
+            <mat-icon>local_taxi</mat-icon>
+            <span>Mes vehicules</span> 
+        </a>
+        <a mat-menu-item routerLink="/compte-utilisateur/mes-locations/locataire"> 
+            <mat-icon>local_taxi</mat-icon>
+            <span>Mes locations</span> 
+        </a>
+        <a mat-menu-item routerLink="/compte-utilisateur/mes-paiements/mes-paiements"> 
+            <mat-icon>account_balance_wallet</mat-icon>
+            <span>Mes paiements</span> 
+        </a>
+        <a mat-menu-item routerLink="/compte-utilisateur/mon-compte/verification-compte"> 
+            <mat-icon>person</mat-icon>
+            <span>Mon compte</span> 
+        </a>
+        <a mat-menu-item routerLink="/faq"> 
+            <mat-icon>help</mat-icon>
+            <span>Aide</span> 
+        </a>
+        <div class="divider"></div>
+       <button mat-icon-button (click)="logout()"> 
+            <mat-icon>power_settings_new</mat-icon>
+            <span>Deconexion</span> 
+       </button>
+    </span>
+</mat-menu>

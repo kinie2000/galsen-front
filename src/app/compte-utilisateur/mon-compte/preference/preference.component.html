@@ -1,0 +1,116 @@
+<div fxLayout="row wrap" class="flex-wrapper">
+    <div fxFlex.gt-sm="25" fxFlex.sm="50" class="p-3">
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="50" fxFlex.sm="50" class="p-3">
+        <div class="bordered px-3 py-2">
+            <h1 class="secondary-font text-center mb-3">Préférences de communication</h1>
+            <div class="divider"></div>
+            <div class="pt-3">
+                <p>
+                    Recevez les notifications nécessaires à l'activité
+                    de votre compte (demandes, confirmations, paiements...).
+                </p>
+            </div>
+
+
+            <form autocomplete="off" fxLayout="row wrap" [formGroup]="infoForm" (ngSubmit)="onInfoFormSubmit()">
+                <section class="example-section">
+
+                    <p>
+                        <mat-checkbox formControlName="email" color="primary" [(ngModel)] = "myModelMail">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <span class="mr-1">par Email</span>
+                                <mat-icon class="mat-icon-sm" color="primary"
+                                    matTooltip="Vous receverez vos notications par email.">
+                                    live_help
+                                </mat-icon>
+                            </div>
+                        </mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox formControlName="mobile" color="primary" [(ngModel)] = "myModelMobil">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <span class="mr-1">Notification mobile</span>
+                                <mat-icon class="mat-icon-sm" color="primary"
+                                    matTooltip="Vous receverez vos notications par telephone.">
+                                    live_help
+                                </mat-icon>
+                            </div>
+                        </mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox formControlName="sms" color="primary" [(ngModel)] = "myModelMess">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <span class="mr-1">par SMS</span>
+                                <mat-icon class="mat-icon-sm" color="primary"
+                                    matTooltip="Vous receverez vos notications par message.">
+                                    live_help
+                                </mat-icon>
+                            </div>
+                        </mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox formControlName="phone" color="primary" [(ngModel)] = "myModelTel">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <span class="mr-1">par Téléphone</span>
+                                <mat-icon class="mat-icon-sm" color="primary"
+                                    matTooltip="Vous receverez vos notications par telephone.">
+                                    live_help
+                                </mat-icon>
+                            </div>
+                        </mat-checkbox>
+                    </p>
+                </section>
+
+                <div fxFlex="100" class="pt-3">
+                    <button mat-raised-button color="primary" type="submit" class="uppercase">mettre à jour</button>
+                </div>
+
+            </form>
+
+            <br /><br /><br />
+            <div class="pt-3">
+                <p>
+                    Louez en toute sécurité ! En procédant à votre identification vous multipliez par 3 la
+                    confiance des personnes qui consultent votre profil. Cette procédure, simple et rapide,
+                    est obligatoire pour effectuer une réservation utilisant le service OuiCar Connect.
+                    En savoir plus
+                    Ces informations ne sont partagées qu'une fois votre réservation confirmée par un autre
+                    propriétaire OuiCar.
+                </p>
+            </div>
+
+            <div class="pt-3">
+                <a routerLink="/compte-utilisateur/mon-compte/changer-password" class="primary-color fw-500">
+                    <h1 class="bg-primary secondary-font text-center ">Changer le mot de passe</h1>
+                </a>
+            </div>
+            <div class="pt-3">
+                <a routerLink="/compte-utilisateur/mon-compte/numero-telephone" class="primary-color fw-500">
+                    <h1 class="bg-primary secondary-font text-center ">Mettre à jour mon numero de téléphone </h1>
+                </a>
+            </div>
+
+            <div class="pt-3">
+                <a routerLink="/compte-utilisateur/mon-compte/change-email" class="primary-color fw-500">
+                    <h1 class="bg-primary secondary-font text-center ">Changer d’adresse email</h1>
+                </a>
+            </div>
+
+            <div class="pt-3">
+                <a routerLink="/compte-utilisateur/mon-compte/changer-password" class="primary-color fw-500">
+                    <h1 class="bg-primary secondary-font text-center ">Supprimer mon compte</h1>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="25" fxFlex.sm="50" class="p-3">
+    </div>
+
+
+
+
+</div>

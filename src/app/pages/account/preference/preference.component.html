@@ -1,0 +1,102 @@
+<form [formGroup]="infoForm" (ngSubmit)="onInfoFormSubmit()" autocomplete="off" fxLayout="row wrap">
+    <div fxFlex="100">
+        <h2 class="secondary-font text-center mb-3">Preference de communication</h2>
+    </div>
+    <!-- <div fxFlex="100" fxFlex.gt-sm="40" class="px-3 mb-3">  
+        <app-image-upload [base64]="infoForm.controls.image.value"
+                        [fileSize]="400"    
+                        [acceptTypes]="'image/png, image/jpeg, image/jpg'"
+                        (onFileChange)="fileChange($event)">
+        </app-image-upload> 
+    </div>  -->
+  
+    <div fxFlex="100" fxFlex.gt-sm="100" class="px-3">
+        <div class="py-3">
+            <mat-checkbox formControlName="individualUseOnly" color="primary"> 
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <span class="mr-1">par Email</span>
+                    <mat-icon class="mat-icon-sm" color="primary" matTooltip="Vous receverez vos notications par email.">live_help</mat-icon>
+                </div>
+            </mat-checkbox> 
+        </div>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="100" class="px-3">
+        <div class="py-3">
+            <mat-checkbox formControlName="individualUseOnly" color="primary"> 
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <span class="mr-1">Par SMS</span>
+                    <mat-icon class="mat-icon-sm" color="primary" matTooltip="Vous receverez vos notificationspar SMS.">live_help</mat-icon>
+                </div>
+            </mat-checkbox> 
+        </div>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="100" class="px-3">
+        <div class="py-3">
+            <mat-checkbox formControlName="individualUseOnly" color="primary"> 
+                <div fxLayout="row" fxLayoutAlign="start center">
+                    <span class="mr-1">par Notification mobile</span>
+                    <mat-icon class="mat-icon-sm" color="primary" matTooltip="vous seriez avertir pour tous changements par Notification.">live_help</mat-icon>
+                </div>
+            </mat-checkbox> 
+        </div>
+    </div>
+
+
+
+    <!-- <div fxFlex="100" fxFlex.gt-sm="100" class="px-3" ngClass.sm="mt-2" ngClass.xs="mt-2">
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="infoForm.controls.email.errors?.required">Email is required</mat-error>
+            <mat-error *ngIf="infoForm.controls.email.hasError('invalidEmail')">Invalid email address</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="infoForm.controls.email.errors?.required">Email is required</mat-error>
+            <mat-error *ngIf="infoForm.controls.email.hasError('invalidEmail')">Invalid email address</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Phone</mat-label>
+            <input matInput placeholder="Phone" formControlName="phone" required onlyNumber>
+            <mat-error *ngIf="infoForm.controls.phone.errors?.required">Phone is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Facebook</mat-label>
+            <input matInput placeholder="facebook" formControlName="facebook">
+        </mat-form-field>
+
+        <h2 class="secondary-font text-center mb-3">Votre permis de conduire</h2>
+
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Numéro de permis</mat-label>
+            <input matInput placeholder="Numéro de permis" formControlName="NumeroPermis" required>
+            <mat-error *ngIf="infoForm.controls.NumeroPermis.errors?.required">Numéro de permis obligatoire</mat-error>
+            <mat-error *ngIf="infoForm.controls.name.hasError('minlength')">Name isn't long enough, minimum of 3 characters</mat-error> 
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Pays</mat-label>
+            <input matInput placeholder="Pays" formControlName="Pays" required>
+            <mat-error *ngIf="infoForm.controls.Pays.errors?.required">Pays obligatoire</mat-error>
+             <mat-error *ngIf="infoForm.controls.name.hasError('minlength')">Name isn't long enough, minimum of 3 characters</mat-error> 
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Date d’obtention</mat-label>
+            <input matInput readonly placeholder="Fin" formControlName="DateObtention" [matDatepicker]="datePickerEnd"
+                appMaskDate>
+            <mat-datepicker-toggle matSuffix [for]="datePickerEnd"></mat-datepicker-toggle>
+            <mat-datepicker #datePickerEnd></mat-datepicker>
+            <mat-error *ngIf="infoForm.controls.DateObtention.errors?.required">Date d’obtention est obligatoire
+            </mat-error>
+        </mat-form-field>
+
+    </div> -->
+    <!-- <div fxFlex="100" class="text-center mt-2">
+        <button mat-raised-button color="primary" type="submit" class="uppercase">Update profile</button>
+    </div> -->
+</form>

@@ -1,0 +1,77 @@
+<div class="px-3 py-5">
+    <div class="theme-container">  
+        <mat-card class="p-0 o-hidden">
+            <div fxLayout="row wrap"> 
+                 
+                <div fxFlex="100" fxFlex.gt-sm="50" class="py-3" ngClass.gt-sm="px-5" ngClass.sm="px-3" ngClass.xs="px-3">  
+                    <div fxLayout="column" fxLayoutAlign="center center" class="text-center">  
+                        <h1 class="secondary-font">Creer un compte</h1>  
+                        <a mat-button routerLink="/login" color="accent" class="w-100">Avez déjà un compte ? S'identifier!</a>  
+                    </div>
+                    <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit()">  
+                        <!-- <mat-form-field  appearance="outline" class="w-100 mt-2">
+                            <mat-icon matPrefix class="mr-1 text-muted">person</mat-icon>
+                            <mat-label>Username</mat-label>
+                            <input matInput placeholder="username" formControlName="user_name" required>
+                            <mat-error *ngIf="registerForm.controls.user_name.errors?.required">username est obligatoire</mat-error>
+                            <mat-error *ngIf="registerForm.controls.user_name.hasError('minlength')">Username doit avoir aumoin 6 carracteres</mat-error>
+                        </mat-form-field> -->
+                        <mat-form-field  appearance="outline" class="w-100 mt-1">
+                            <mat-icon matPrefix class="mr-1 text-muted">email</mat-icon>
+                            <mat-label>Adresse mail</mat-label>
+                            <input matInput placeholder="Email" formControlName="email" required>
+                            <mat-error *ngIf="registerForm.controls.email.errors?.required">Adresse mail est obligatoire</mat-error>
+                            <mat-error *ngIf="registerForm.controls.email.hasError('invalidEmail')">Invalid email address</mat-error>
+                        </mat-form-field>
+                        <mat-form-field  appearance="outline" class="w-100 mt-1">
+                            <mat-icon matPrefix class="mr-1 text-muted">lock</mat-icon>
+                            <mat-label>Mot de passe</mat-label>
+                            <input matInput placeholder="Mot de passe" formControlName="password" type="password" minlength="6" required [type]="hide ? 'password' : 'text'">
+                            <mat-error *ngIf="registerForm.controls.password.errors?.required">Password is required</mat-error>
+                            <mat-error *ngIf="registerForm.controls.password.hasError('minlength')">Password isn't long enough, minimum of 6 characters</mat-error>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" type="button" class="text-muted">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                        </mat-form-field> 
+                        <mat-form-field  appearance="outline" class="w-100 mt-1">
+                            <mat-icon matPrefix class="mr-1 text-muted">lock</mat-icon>
+                            <mat-label>Confirmation du mot de passe</mat-label>
+                            <input matInput placeholder="Confirmation du mot de passe" formControlName="confirmPassword" type="password" required [type]="hide ? 'password' : 'text'">
+                            <mat-error *ngIf="registerForm.controls.confirmPassword.errors?.required">Confirm Password is required</mat-error>
+                            <mat-error *ngIf="registerForm.controls.confirmPassword.hasError('mismatchedPasswords')">Passwords do not match</mat-error>
+
+                            <button mat-icon-button matSuffix (click)="hide = !hide" type="button" class="text-muted">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>   
+                        </mat-form-field> 
+                        <mat-slide-toggle formControlName="receiveNewsletter" required  name="isAccept" [(ngModel)]="isAccept" checked class="my-2"> <a mat-button routerLink="/terms-conditions"  color="primary" class="mx-2">Accepter les Termes et conditions</a></mat-slide-toggle>                           
+                        <mat-error *ngIf="registerForm.controls.receiveNewsletter.errors?.required">Accepter les termes et condition d\'utilisateurs </mat-error>
+                        <mat-error *ngIf="registerForm.controls.receiveNewsletter.hasError()">Invalid </mat-error>                        <div class="text-center mt-2"> 
+                            <button mat-raised-button color="accent" class="uppercase" type="submit">
+                                Creer le compte
+                            </button>
+                        </div> 
+                    </form>
+                    <!-- <div class="divider mt-4"></div> 
+                    <mat-card-actions fxLayoutAlign="center center" class="text-center">
+                        <small class="my-3">By clicking the "Create an Account" button you agree with our <a mat-button routerLink="/terms-conditions" color="primary" class="mx-2">Terms and conditions</a> </small>
+                    </mat-card-actions> -->
+                </div> 
+                <div fxFlex="100" fxFlex.gt-sm="10" class="py-3" ngClass.gt-sm="px-5" ngClass.sm="px-3" ngClass.xs="px-3">
+                    <br/><br/><br/><br/><br/><br/><br/><br/><h1>Ou</h1>
+                </div>
+                <!-- <div fxFlex="100" fxFlex.gt-md="10" class="py-3" [style.background-image]="googleImage" class="bg-cover"> 
+                </div> <br/>
+                 <div fxFlex="100" fxFlex.gt-md="10" class="py-3" [style.background-image]="googleImage" class="bg-cover"> 
+                </div> -->
+                <div fxFlex="100" fxFlex.gt-sm="10" class="py-3" ngClass.gt-sm="px-5" ngClass.sm="px-3" ngClass.xs="px-3">
+                    <br/><br/><br/><br/>
+                    <a (click)="signInHandlerFacebook()"><img src="assets/images/others/google.png"></a><br/><br/>
+                    <a href=""> <img src="assets/images/others/facebook.png"></a><br/><br/>
+                    <a href=""><img src="assets/images/others/apple.png" ></a><br/>
+
+                </div>
+            </div> 
+        </mat-card>
+    </div>
+</div>   

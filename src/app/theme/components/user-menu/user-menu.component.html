@@ -1,0 +1,74 @@
+<a mat-button [matMenuTriggerFor]="userMenu" #userMenuTrigger="matMenuTrigger">
+    <mat-icon class="mat-icon-sm">person</mat-icon>
+    <span fxShow="false" fxShow.gt-sm class="mx-1 uppercase">Mon Espace</span> 
+    <mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
+</a>
+<mat-menu #userMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-menu-panel user-menu">
+    <span (mouseleave)="userMenuTrigger.closeMenu()">
+
+        <div class="divider"></div>
+
+        <div *ngIf="show; else elseBlock"> 
+            <a mat-menu-item routerLink="/login">
+            <mat-icon class="mat-icon-sm">person</mat-icon>
+            <span>Particulier</span>
+        </a>
+        
+        <a mat-menu-item routerLink="/registerPro"> 
+            <mat-icon class="mat-icon-sm">domain</mat-icon>
+            <span>Professionnel</span> 
+        </a>
+
+        </div>
+        <ng-template  #elseBlock>
+
+            <div fxLayout="row" fxLayoutAlign="start" class="user-info" >    
+                <div Align="Center">
+                    <img Align="Center " src="assets/images/others/user.jpg" alt="user-image" width="50">
+                    <p class="m-0">{{userDetails?.user.user_name}}  {{userDetails?.user.user_surname}}<br></p>
+                    <small><i>{{userDetails?.email}}</i></small>
+
+                </div>  
+             
+            </div>
+         
+            <div fxLayout="row" fxLayoutAlign="space-around center" class="w-100 muted-text">
+                <!-- <button mat-icon-button>
+                    <mat-icon>person_outline</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon>mail_outline</mat-icon>
+                </button> -->
+                <!-- <button mat-icon-button (click)="logout()" >
+                    <mat-icon>power_settings_new</mat-icon>
+                </button> -->
+            </div>
+        <a mat-menu-item routerLink="/compte-utilisateur">            
+            <mat-icon class="mat-icon-sm">account_circle</mat-icon>
+            <span>Mon compte</span> 
+        </a> 
+
+        <a mat-menu-item routerLink="/compte-utilisateur">            
+            <mat-icon class="mat-icon-sm">mail_outline</mat-icon>
+            <span>Mes Messages</span> 
+        </a>
+
+    <a mat-menu-item routerLink="/compte-utilisateur/mes-paiements/mes-paiements"> 
+        <mat-icon class="mat-icon-sm">money</mat-icon>    
+        <span>Mes paiements</span> 
+        </a>
+        <a mat-menu-item routerLink="/faq"> 
+            <mat-icon class="mat-icon-sm">help</mat-icon>
+            <span>Help</span> 
+            
+        </a> 
+        <a mat-menu-item routerLink="/" (click)="logout()"> 
+            <mat-icon class="mat-icon-sm">lock</mat-icon>
+            <span>Se déconnecter</span> 
+        </a> 
+        
+        <div class="divider"></div>
+       
+    </ng-template>
+    </span>
+</mat-menu>  

@@ -1,0 +1,116 @@
+<div class="search-wrapper">
+    <div class="wrapper">
+        <div class="wrapper-content">
+            <div class="filter" fxLayout="row wrap" fxLayoutAlign="center" fxLayout.xs="column" fxLayoutGap="10px" fxLayoutGap.xs="0">
+                <div fxFlex fxFlexOffset="50px" fxFlexOffset.xs="0">
+                    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutGap.xs="0">
+                        <!-- <div fxFlex="35"> Child - One </div>
+                        <div fxFlex="30"> Child - Two </div>
+                        <div fxFlex="35">
+                            Sub-child - One
+                        </div> -->
+                        <div fxFlex="100" fxFlex.gt-sm="8">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Prix</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let hour of hours" [value]="hour">{{hour}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-sm="25">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Réservation instantannée</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let hour of hours" [value]="hour">{{hour}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-sm="18">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Type de véhicule</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let hour of hours" [value]="hour">{{hour}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-sm="15">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Plus de filtes</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let hour of hours" [value]="hour">{{hour}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div fxFlex="100" fxFlex.gt-sm="400px">
+                    <p class="result-search">Location voiture entre particuliers: 237 résultats trouvés</p>
+                </div>
+            </div>
+            <div fxLayout="row wrap">
+                <div fxFlex="100" fxFlex.gt-sm="40%">
+                    <div class="search-results-container" infinite-scroll [scrollWindow]="false" (scrolled)="onScrollDown($event)" (scrolledUp)="onScrollUp($event)">
+                        <div class="supersearch-filters bg-white folded">
+                            <app-header-search-form [address]="address" (emitter)="send($event)"></app-header-search-form>
+                        </div>
+                        <div>
+                            <ul *ngFor="let i of listArray">
+                                <li class="animated fadeIn">
+                                    <a href="#">
+                                        <figure class="bgKMTc ezEGju table-wrapper">
+                                            <div class="lbpNOe bxOvOr">
+                                                <picture class="kLBGEJ">
+                                                    <source media="(max-width: 767px)" srcset="https://media.ouicar.fr/Product/Cars/2c9165d9-d0ab-421b-9d59-599c6a2d2871/f6ccdb6a-c5d1-434a-a8ca-044b6babd917.jpg?w=114&amp;h=114 1x, https://media.ouicar.fr/Product/Cars/2c9165d9-d0ab-421b-9d59-599c6a2d2871/f6ccdb6a-c5d1-434a-a8ca-044b6babd917.jpg?w=228&amp;h=228 2x">
+                                                    <img src="https://media.ouicar.fr/Product/Cars/2c9165d9-d0ab-421b-9d59-599c6a2d2871/f6ccdb6a-c5d1-434a-a8ca-044b6babd917.jpg?w=220&amp;h=144" srcset="https://media.ouicar.fr/Product/Cars/2c9165d9-d0ab-421b-9d59-599c6a2d2871/f6ccdb6a-c5d1-434a-a8ca-044b6babd917.jpg?w=440&amp;h=288 2x"
+                                                        class="hdcGDb">
+                                                </picture>
+                                            </div>
+                                            <figcaption class="lcqeeG">
+                                                <div class="kaFgYY">
+                                                    <div class="iuXJa">
+                                                        <div class="duoHcD cFTfRV">Renault Twingo</div>
+                                                        <div class="duoHcD kZWFJc">Lyon-St-Paul</div>
+                                                    </div>
+                                                </div>
+                                                <div class="kaFgYY">
+                                                    <div class="cAUTEq">
+                                                        <div class="jAOIAs">
+                                                            <span class="star">
+                                                                <svg color="currentColor" viewBox="0 0 1024 1024" style="display: inline-block; stroke: currentcolor; fill: currentcolor; width: 20px; height: 20px;">
+                                                                    <path d="M512.011 757.336l-263.339 138.452 50.304-293.248-213.333-207.66 294.4-42.666 131.668-266.795 131.672 266.795 294.4 42.666-213.336 207.66 50.304 293.248-262.74-138.452z"></path>
+                                                                    <path d="M511.715 48.848c13.919 0 26.631 7.903 32.794 20.386l123.158 249.546 275.361 39.908c13.784 1.998 25.238 11.653 29.539 24.899s0.706 27.787-9.275 37.5l-199.545 194.235 47.053 274.282c2.355 13.729-3.291 27.6-14.563 35.781s-26.211 9.249-38.532 2.757l-245.712-129.481-246.301 129.496c-12.322 6.48-27.253 5.402-38.515-2.783-11.262-8.181-16.902-22.049-14.548-35.771l47.050-274.282-199.544-194.235c-9.98-9.713-13.576-24.254-9.274-37.5s15.754-22.901 29.538-24.899l275.363-39.908 123.156-249.546c6.162-12.483 18.875-20.386 32.797-20.386zM511.715 168.056l-98.875 200.343c-5.332 10.8-15.634 18.282-27.549 20.008l-220.967 32.026 160.162 155.9c8.632 8.404 12.573 20.517 10.536 32.391l-37.775 220.208 197.747-103.969c10.664-5.606 23.406-5.599 34.066 0.018l197.105 103.863-37.76-220.12c-2.037-11.875 1.902-23.987 10.533-32.391l160.165-155.9-220.965-32.026c-11.919-1.726-22.221-9.209-27.549-20.008l-98.875-200.343z"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                        <div class="duoHcD jqdBFP">4,4</div>
+                                                        <div class="duoHcD eQUHla">(45 avis)</div>
+                                                    </div>
+                                                    <div class="eHfjpq">
+                                                        <span class="YDOkg gdMhZC">13&nbsp;XOF</span>
+                                                        <span class="duoHcD">/jour</span>
+                                                    </div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="list-group">
+                            <a class="list-group-item list-group-item-action" *ngFor="let i of listArray">
+                                <p class="mb-1">{{i}} Item added on {{direction}}</p>
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+                <div fxFlex="100" fxFlex.gt-sm="60%">
+                    <app-map-senegal [mapHome]="false" [geometry]="geometry"></app-map-senegal>
+                </div>
+            </div>
+            <div class="kaFgYY">
+                <div>Papa</div>
+                <div>Maman</div>
+            </div>
+        </div>
+    </div>
+</div>

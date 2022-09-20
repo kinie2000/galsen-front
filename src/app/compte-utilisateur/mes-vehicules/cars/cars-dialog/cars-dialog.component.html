@@ -1,0 +1,673 @@
+<!-- <<<<<<< HEAD
+<div class="header bg-primary">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+        <h2 class="fw-500 secondary-font">{{(data?.cars) ? 'Edit' : 'Add'}} Customer</h2>
+        <app-dialog-header-controls [dialogRef]="dialogRef"></app-dialog-header-controls>
+    </div>
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off" fxLayout="row wrap" class="flex-wrapper">
+    <div mat-dialog-content>
+        <mat-tab-group class="tab-content-wrapped">
+            <mat-tab label="Caractéristiques_Principales" formGroupName="Caractéristiques_Principales">
+                <div class="o-hidden mt-4">
+                    <div fxLayout="row wrap">
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100 ">
+                                <mat-label>Marque</mat-label>
+                                <mat-select>
+                                    <mat-option value="one">Monsieur</mat-option>
+                                    <mat-option value="two">Madame</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Modele</mat-label>
+                                <mat-select>
+                                    <mat-option value="one">Monsieur</mat-option>
+                                    <mat-option value="two">Madame</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100 mt-2">
+                                <mat-label>type</mat-label>
+                                <mat-select>
+                                    <mat-option value="one">Monsieur</mat-option>
+                                    <mat-option value="two">Madame</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100 mt-2">
+
+                                <mat-label>Energie</mat-label>
+                                <mat-select>
+                                    <mat-option value="one">Monsieur</mat-option>
+                                    <mat-option value="two">Madame</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100 mt-2">
+
+                                <mat-label>Boite de vitesse</mat-label>
+                                <mat-select>
+                                    <mat-option value="one">Monsieur</mat-option>
+                                    <mat-option value="two">Madame</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100 mt-2">
+
+                                <mat-label>Nombre de place</mat-label>
+                                <mat-select>
+                                    <mat-option value="one">Monsieur</mat-option>
+                                    <mat-option value="two">Madame</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100 mt-2">
+
+                                <mat-label> Nombre de portes</mat-label>
+                                <mat-select>
+                                    <mat-option value="one">Monsieur</mat-option>
+                                    <mat-option value="two">Madame</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100 mt-2">
+
+                                <mat-label>Kilométrage</mat-label>
+                                <mat-select>
+                                    <mat-option value="one">Monsieur</mat-option>
+                                    <mat-option value="two">Madame</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
+                </div>
+            </mat-tab>
+            <mat-tab label="Info_Assurance" formGroupName="Info_Assurance">
+                <div class="o-hidden mt-4">
+                    <div fxLayout="row wrap">
+                        <div class="container">
+                            <div class="row">
+                                <label class="form-label">Date de,mise en circulation</label>
+
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                                    <mat-form-field appearance="outline" class="w-100 ">
+                                        <mat-label>jours</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">Monsieur</mat-option>
+                                            <mat-option value="two">Madame</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                                    <label class="form-label"> </label>
+
+                                    <mat-form-field appearance="outline" class="w-100">
+                                        <mat-label>Mois</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">Monsieur</mat-option>
+                                            <mat-option value="two">Madame</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+
+
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+
+                                    <mat-form-field appearance="outline" class="w-100 ">
+                                        <mat-label>Années</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">Monsieur</mat-option>
+                                            <mat-option value="two">Madame</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <label class="form-label">prochain controle technique</label>
+
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                                    <mat-form-field appearance="outline" class="w-100 ">
+                                        <mat-label>jours</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">Monsieur</mat-option>
+                                            <mat-option value="two">Madame</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+
+
+                                    <mat-form-field appearance="outline" class="w-100">
+                                        <mat-label>Mois</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">Monsieur</mat-option>
+                                            <mat-option value="two">Madame</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+
+
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+
+
+                                    <mat-form-field appearance="outline" class="w-100 ">
+                                        <mat-label>Années</mat-label>
+                                        <mat-select>
+                                            <mat-option value="one">Monsieur</mat-option>
+                                            <mat-option value="two">Madame</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                                    <mat-form-field appearance="outline" class="w-100">
+                                        <mat-label>Immatriculation</mat-label>
+                                        <input matInput placeholder="vehicule_immatriculation"
+                                            formControlName="vehicule_immatriculation" required>
+
+                                        <mat-error
+                                            *ngIf="form.get('Info_Assurance.vehicule_immatriculation')!.errors?.required">
+                                            Phone is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <h2> Information personnel </h2>
+                                <mat-form-field appearance="fill" class="w-100 mt-2">
+                                    <mat-label>Civilité</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">Monsieur</mat-option>
+                                        <mat-option value="two">Madame</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                                    <mat-form-field appearance="outline" class="w-100">
+                                        <mat-label>nom</mat-label>
+                                        <input matInput placeholder="name_person" formControlName="name_person"
+                                            required>
+                                        <mat-error *ngIf="form.get('Info_Assurance.name_person')!.errors?.required">Name
+                                            is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                                    <mat-form-field appearance="outline" class="w-100">
+                                        <mat-label>prénom</mat-label>
+                                        <input matInput placeholder="surname_person" formControlName="surname_person"
+                                            required>
+                                        <mat-error *ngIf="form.get('Info_Assurance.surname_person')!.errors?.required">
+                                            Surname is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                                    <mat-form-field appearance="outline" class="w-100">
+                                        <mat-label>telephone</mat-label>
+                                        <input matInput placeholder="tel" formControlName="tel" required>
+                                        <mat-error *ngIf="form.get('Info_Assurance.tel')!.errors?.required">telephone is
+                                            required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </mat-tab>
+            <mat-tab label="Valeur_Voiture" formGroupName="Valeur_Voiture">
+                <div class="o-hidden mt-4">
+                    <div fxLayout="row wrap">
+
+
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Valeur de la voiture</mat-label>
+                                <input matInput placeholder="vehicule_value" formControlName="vehicule_value" required>
+                                <mat-error *ngIf="form.get('Valeur_Voiture.vehicule_value')!.errors?.required">telephone is
+                                    required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                </div>
+            </mat-tab>
+            <mat-tab label="Disponibilité" formGroupName="Disponibilité">
+                <div class="o-hidden mt-4">
+                    <div fxLayout="row wrap">
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Adresse de Disponibilité</mat-label>
+                                <input matInput placeholder="vehicule_address" formControlName="vehicule_address" required>
+                                <mat-error *ngIf="form.get('Disponibilité.vehicule_address')!.errors?.required">telephone is
+                                    required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                </div>
+            </mat-tab>
+            <mat-tab label="Presentation_Locataire" formGroupName="Presentation_Locataire">
+                <div class="container">
+                    <div class="row">
+                        <div class="o-hidden mt-4">
+                            <div fxLayout="row wrap">
+                                <h4> Présentation de votre véhicule aux locataires <br> </h4>
+                                <h6><i> Mettez en avant les qualités de votre vehicule, sans pour autant oublier
+                                        d'ecrire ses petits défauts. </i></h6>
+
+                                <div fxFlex="100" class="px-3">
+                                    <mat-form-field appearance="outline" class="w-100">
+                                        <mat-label>Decriverz votre vehicule avec le plus de détails possible.
+                                        </mat-label>
+                                        <textarea matInput
+                                            placeholder="vehicule_description (street, apartment, suite, unit etc.)"
+                                            formControlName="vehicule_description" required rows="5"></textarea>
+                                        <mat-error
+                                            *ngIf="form.get('Presentation_Locataire.vehicule_description')!.errors?.required">
+                                            telephone is required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <mat-divider></mat-divider>
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                                    <label class="form-label"> Equipement classique(facultative) </label>
+
+                                    <section class="example-section">
+                                        <mat-checkbox class="example-margin">ESP</mat-checkbox>
+                                        <mat-checkbox class="example-margin">Radio</mat-checkbox>
+                                        <mat-checkbox class="example-margin">AirBag</mat-checkbox>
+                                        <mat-checkbox class="example-margin">ABS</mat-checkbox>
+                                        <mat-checkbox class="example-margin">Direction assistée</mat-checkbox>
+                                        <mat-checkbox class="example-margin">AirBag</mat-checkbox>
+                                    </section>
+                                </div>
+                                <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                                    <label class="form-label"> Equipement pratiques </label>
+
+                                    <section class="example-section">
+                                        <mat-checkbox class="example-margin">Siege enfant</mat-checkbox>
+                                        <mat-checkbox class="example-margin">GPS(systeme de navigation)</mat-checkbox>
+                                        <mat-checkbox class="example-margin">Coffre de toit</mat-checkbox>
+                                        <mat-checkbox class="example-margin">Pneus neige</mat-checkbox>
+
+                                    </section>
+                                </div>
+                                <mat-divider></mat-divider>
+
+
+                                <div fxFlex="100" fxFlex.gt-sm="40" class="px-3 mb-3">
+                                    <h2 class="secondary-font text-center mb-3">Photo Car</h2>
+
+                                    <app-image-upload [base64]="form.controls.image.value" [fileSize]="200"
+                                        [acceptTypes]="'image/png, image/jpeg, image/jpg'"
+                                        (onFileChange)="fileChange($event)">
+                                    </app-image-upload>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </mat-tab>
+            <mat-tab label="Calendrier" formGroupName="Calendrier">
+                <div class="o-hidden mt-4">
+                    <div fxLayout="row wrap">
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>date de debut </mat-label>
+                                <input matInput placeholder="vehicule_description" formControlName="vehicule_description" required>
+                                <mat-error *ngIf="form.get('Calendrier.vehicule_description')!.errors?.required">telephone is
+                                    required</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>date de fin </mat-label>
+                                <input matInput placeholder="vehicule_description" formControlName="vehicule_description" required>
+                                <mat-error *ngIf="form.get('Calendrier.vehicule_description')!.errors?.required">telephone is
+                                    required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Location" formGroupName="Location">
+                <div class="o-hidden mt-4">
+                    <div fxLayout="row wrap">
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Prix de la location par jour hors KM </mat-label>
+                                <input matInput placeholder="vehicule_description" formControlName="vehicule_description" required>
+                                <mat-error *ngIf="form.get('Location.vehicule_description')!.errors?.required">telephone is
+                                    required</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Prix location pour 100km </mat-label>
+                                <input matInput placeholder="vehicule_description" formControlName="vehicule_description" required>
+                                <mat-error *ngIf="form.get('Location.vehicule_description')!.errors?.required">telephone is
+                                    required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+    <div mat-dialog-actions>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100 px-1">
+            <button mat-raised-button color="warn" type="button" mat-dialog-close>Close</button>
+            <button mat-raised-button color="primary" type="submit" click=" onSubmit() ">Save</button>
+        </div>
+    </div>
+</form>
+======= -->
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>
+<mat-dialog-content>
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+    
+    <mat-step [stepControl]="firstFormGroup" >
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Caractéristiques Principales</ng-template>
+            <mat-form-field appearance="fill">
+                <mat-label>Marque</mat-label>
+                <mat-select formControlName="vehicule_mark" [(value)]="selected" >
+                        <mat-option *ngFor="let item of allmark" [value]="item.id" (click)="selectionMark(item.id)">
+                            {{item.mark_lib}}
+                        </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Modele</mat-label>
+                <mat-select formControlName="vehicule_model">
+        <mat-option *ngFor="let item of allmodel" [value]="item.id" (click)="selectionModel(item.id)">
+            {{item.mod_lib}}
+        </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>type</mat-label>
+                <mat-select formControlName="vehicule_type">
+                <mat-option *ngFor="let item of alltyp" [value]="item.id" (click)="selectiontyp(item.id)">
+                    {{item.typ_lib}}
+                </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Energie</mat-label>
+                <mat-select formControlName="vehicule_energy">
+                <mat-option *ngFor="let item of allenerg" [value]="item.id" (click)="selectenergi(item.id)">
+                    {{item.energy_lib}}
+                </mat-option>
+                </mat-select>
+            </mat-form-field>
+          
+            
+            <mat-form-field appearance="fill">
+                <mat-label>Boite de vitesse</mat-label>
+                <mat-select formControlName="vehicule_VitesseBox" >
+                        <mat-option *ngFor="let item of allbtvt" [value]="item.id" (click)="selectbtv(item.id)">
+                            {{item.gearboxe_lib}}
+                        </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre de place</mat-label>
+                <mat-select formControlName="vehicule_NbrPlace" >
+    <mat-option *ngFor="let item of allnbrpl" [value]="item.id" (click)="selectnbrpl(item.id)">
+        {{item.number_place_limit}}
+    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre de porte</mat-label>
+                <mat-select formControlName="vehicule_NbrPorte">
+                    <mat-option *ngFor="let item of allnbrport" [value]="item.id">
+                        {{item.number_door_limit}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Kilométrage</mat-label>
+                <input matInput placeholder="Last name, First name" formControlName="vehicule_Kilometrage" required>
+            </mat-form-field>
+
+
+            <div>
+                <button mat-button matStepperNext (click)="savefirst()">Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Info Assurance">
+        <form [formGroup]="secondFormGroup">
+        <mat-form-field>
+            <mat-label>Date de mise en circulation</mat-label>
+            <input matInput formControlName="vehicule_date_release" [matDatepicker]="picker1">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Date  prochain controle</mat-label>
+            <input matInput formControlName="vehicule_date_next_controle" [matDatepicker]="picker2" [min]="minDateStart">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+    
+  
+    <mat-form-field>
+        <mat-label>Immatriculation</mat-label>
+        <input matInput formControlName="vehicule_immatriculation" placeholder="Ex. 1 Main St, New York, NY" required>
+    </mat-form-field>
+    <mat-form-field >
+        <mat-label>Numéro d’assurance</mat-label>
+        <input matInput formControlName="inssurance_number" placeholder="Ex. 1 Main St, New York, NY" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input readonly matInput formControlName="name_person" placeholder="Ex. 1 Main St, New York, NY" value="{{this.item?.user_name}}">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>prénom</mat-label>
+        <input readonly matInput formControlName="surname_person" placeholder="Ex. 1 Main St, New York, NY" value="{{this.item?.user_surname}}">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>civilité</mat-label>
+            <input readonly matInput formControlName="civilite" placeholder="Ex. 1 Main St, New York, NY" value="{{this.item?.user_sex}}">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Valider son téléphone par sms</mat-label>
+        <input readonly matInput formControlName="tel" placeholder="Ex. 1 Main St, New York, NY" value="{{this.item?.user_phone}}">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Date debut assurance</mat-label>
+        <input matInput formControlName="inssurance_date_start" [matDatepicker]="picker3">
+        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+        <mat-datepicker #picker3></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Date fin assurance</mat-label>
+        <input matInput formControlName="inssurance_date_end" [matDatepicker]="picker4" [min]="minDateStart">
+        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+        <mat-datepicker #picker4></mat-datepicker>
+    </mat-form-field>
+    
+            
+            
+            <div>
+                <button mat-button matStepperPrevious (click)="resetsecond()">Back</button>
+                <button mat-button matStepperNext (click)="savesecond()">Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="troisFormGroup" label="Valeur voiture">
+        <form [formGroup]="troisFormGroup">
+            
+            <mat-form-field>
+                <mat-label>valeur de la voiture</mat-label>
+                <input matInput formControlName="vehicule_value" placeholder="Ex. 1 Main St, New York, NY" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious (click)="resetreois()">Back</button>
+                <button mat-button matStepperNext (click)="savetrois()">Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="ktriemFormGroup" label="Adresse">
+        <form [formGroup]="ktriemFormGroup">
+        <app-search-adress (newItemEvent)="addItem($event)"></app-search-adress>
+           
+            <div>
+                <button mat-button matStepperPrevious (click)="resetktre()">Back</button>
+                <button mat-button matStepperNext (click)="savektre()">Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="cinkiemFormGroup" label="Description">
+        <form [formGroup]="cinkiemFormGroup">
+        <div class="container">
+            <div class="row">
+                <div class="o-hidden mt-4">
+                    <div fxLayout="row wrap">
+                        <h4> Présentation de votre véhicule aux locataires Mettez en avant les qualités de votre vehicule, sans pour autant oublier
+                                d'ecrire ses petits défauts.</h4>
+        
+                        <div fxFlex="100" class="px-3">
+                            <mat-form-field appearance="outline" class="w-100">
+                                <mat-label>Decriverz votre vehicule avec le plus de détails possible.
+                                </mat-label>
+                                <textarea matInput placeholder="vehicule_description (street, apartment, suite, unit etc.)"
+                                    formControlName="vehicule_description" required rows="5"></textarea>
+                                <mat-error *ngIf="form.get('Presentation_Locataire.vehicule_description')!.errors?.required">
+                                    telephone is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <label class="form-label"> Equipement classique(facultatif) </label>
+        
+                            <section class="example-section">
+                                <mat-checkbox class="example-margin"  formControlName="Sec_ESP">ESP</mat-checkbox>
+                                <mat-checkbox class="example-margin"  formControlName="Sec_Rad">Radio</mat-checkbox>
+                                <mat-checkbox class="example-margin"  formControlName="Sec_Air">AirBag</mat-checkbox>
+                                <mat-checkbox class="example-margin"  formControlName="Sec_ABS">ABS</mat-checkbox>
+                                <mat-checkbox class="example-margin"  formControlName="Sec_Direc">Direction assistée</mat-checkbox>
+
+                            </section>
+                        </div>
+                        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-3">
+                            <label class="form-label"> Equipement pratiques(facultatif) </label>
+        
+                            <section class="example-section">
+                                <mat-checkbox class="example-margin" formControlName="Sec_sieg_enf">Siege enfant</mat-checkbox>
+                                <mat-checkbox class="example-margin" formControlName="Sec_GPS">GPS(systeme de navigation)</mat-checkbox>
+                                <mat-checkbox class="example-margin" formControlName="Sec_cof">Coffre de toit</mat-checkbox>
+                                <mat-checkbox class="example-margin" formControlName="Sec_pneu">Pneus neige</mat-checkbox>
+        
+                            </section>
+                        </div>
+                        <mat-divider></mat-divider>
+        
+        
+                    </div>
+        
+                </div>
+            </div>
+      
+                <button mat-button matStepperPrevious (click)="resetcinkiem()">Back</button>
+                <button mat-button matStepperNext (click)="savetcinkiem()">Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="sixiemFormGroup" label="Image">
+        <form [formGroup]="sixiemFormGroup">
+        <mat-label>image voiture</mat-label>
+         
+    <label for="file">File</label>
+    <input formControlName="file" id="file" type="file" class="form-control" multiple="" (change)="onFileChange($event)">
+    <!-- <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+        <div *ngIf="f.file.errors && f.file.errors.required">File is required.</div>
+    </div> -->
+            <img *ngFor='let url of images' [src]="url" height="150" width="200px" style="margin: 3px;"> <br />
+            <div>
+                <button mat-button matStepperPrevious (click)="resetsixiem()">Back</button>
+                <button mat-button matStepperNext (click)="savetsixiem()">Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+  
+
+    <mat-step [stepControl]="setiemFormGroup" label="Disponibilite">
+        <form [formGroup]="setiemFormGroup">
+          
+            <mat-form-field>
+                <mat-label>Disponibilité vehicule</mat-label>
+                <input matInput formControlName="vehicule_dispo" [matDatepicker]="picker5" [min]="minDateStart">
+                <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                <mat-datepicker #picker5></mat-datepicker>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious (click)="resetsetiem()">Back</button>
+                <button mat-button matStepperNext (click)="savetsetiem()">Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step [stepControl]="huitiemFormGroup" label="Location">
+        <form [formGroup]="huitiemFormGroup">
+            <mat-form-field>
+                <mat-label>Prix de la location par jour hors KM</mat-label>
+                <input matInput formControlName="prixkmjr" placeholder="Ex. 1 Main St, New York, NY" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Prix location pour 100KM</mat-label>
+                <input matInput formControlName="prix100km" placeholder="Ex. 1 Main St, New York, NY" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious (click)="resethuitiem()">Back</button>
+                <button mat-button matStepperNext (click)="savehuitiem()">Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Save</ng-template>
+        <p>Enregistrer votre voiture.</p>
+        <div>
+            <button mat-button matStepperPrevious (click)="resethuitiem()">Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-button (click)="save()">Save</button>
+        </div>
+    </mat-step> -->
+</mat-vertical-stepper>
+</mat-dialog-content>
+
